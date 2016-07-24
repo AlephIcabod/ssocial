@@ -156,6 +156,7 @@ var app=angular.module("app")
 				fechatermino:new Date()
 			};
 			this.enviar=function(){
+				control.doing=true;
 				$http({method:"GET",
 						url:"/alumnos/constancias",params:control.periodo,
 						responseType:"blob"})
@@ -163,6 +164,7 @@ var app=angular.module("app")
 					      var blob = new Blob([data], { type: 'docx' });
 					      var fileName = headers('content-disposition');
 					      saveAs(blob, fileName);
+					      control.doing=false;
 					  }).error(function (data, status, headers, config) {
 					  		control.error=true;
 					  		control.mensaje="No hay servidores sociales en ese periodo";
@@ -173,7 +175,7 @@ var app=angular.module("app")
 
 			}					
 	}])	
-	.controller("nuevoController",["$http",function($http){
+	.controller("nuevoController",["$http","$timeout",function($http,$timeout){
 		control=this;
 		this.titulo="Agregar nuevo servidor social";
 		this.carreras=["Ingeniería Civil",
@@ -196,13 +198,38 @@ var app=angular.module("app")
 					sexo:"",
 					horas:"",
 					dependencia:"",
-					actividades:"",
+					actividades:"Actividades administrativas",
 					fechainicio:"",
 					fechatermino:""}
 		this.enviar=function(){
-			
+			$http.post("/alumnos",control.alumno)
+			.success(function(d){
+				control.done=true;
+				control.success=true;
+				control.id=d.data.id;
+				control.mensaje="Registro exitoso "+d.data.NOMBREALUMNO;
+				$timeout(function(){control.done=false;
+					control.reset();},2500);					
+			})
+			.error(function(d){
+				control.done=true;
+				control.success=false;	
+				control.mensaje="Algo salio mal con los datos, revisar";
+			})
 		};
-		this.reset=function(){};
+		this.reset=function(){
+			this.alumno={nombre:"",
+					apPat:"",
+					apMat:"",
+					numControl:"",
+					carrera:"",
+					sexo:"",
+					horas:"",
+					dependencia:"",
+					actividades:"Actividades administrativas",
+					fechainicio:"",
+					fechatermino:""}
+		};
 	}])
 	;
 	
