@@ -1,0 +1,37 @@
+<article>	
+	<h1>Constancias de Liberación</h1>
+	<h3 class="center-align"> Periodo de conclusion de servicio</h3>
+	<div class="row center-align " ng-show="control.error">
+		<h4>
+			<a class="btn-floating btn-small" ng-click="control.error=!control.error" >	
+				<i class="medium material-icons">error</i>					
+			</a>						
+			{{control.mensaje}}
+		</h4>
+	</div>
+	<div class="row">	
+		<div class="col s12 m10 offset-m1">
+			<form ng-submit="control.enviar()" class="constanciaForm" invalidate>
+				<div class="row">				
+					<div class="input-field col s6 m4 offset-m2">
+						<div class="fecha">
+							<p><input type="date" name="fechainicio" placeholder="" ng-model="control.periodo.fechainicio" class="validate" required></p>
+			    			<label>Desde</label>
+			    		</div>
+			    	</div>
+			    	<div class="input-field col s6 m4">
+			    		<div class="fecha">
+							<p><input type="date" name="fechatermino" placeholder="" ng-model="control.periodo.fechatermino" class="validate"></p>
+			    			<label>Hasta</label>	    				  			    	
+			  			</div>
+					</div>
+				</div>
+				<div class="row center-align">
+					<button class="btn waves-effect waves-light" type="submit" >
+		    			<i class="material-icons right">file_download</i> Generar
+		  			</button>	
+				</div>
+			</form>	
+		</div>
+	</div>	
+</article>
