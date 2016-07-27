@@ -1,0 +1,124 @@
+body
+	font-family 'Oxygen', sans-serif
+
+header
+	text-align center
+	padding-top .3em
+	padding-bottom .3em	
+	.titulo
+		color white
+		font-weight bold
+		padding-top .3em
+		padding-bottom .3em
+		margin-left 1em
+		margin-right auto
+	img
+		margin-left auto
+		margin-right 0
+		width 90px
+
+article
+	min-height 500px
+	padding-top 2em
+	padding-bottom 2.5em
+	h1
+		text-align center
+		font-size 2.3em
+		text-shadow 2px 2px 2px #ddd		
+		a
+			text-shadow none
+	h2
+		font-size 2em
+		text-shadow 2px 2px 0 #d
+	table
+		font-size .9em !important
+	.row
+		transition: all linear 1s	
+	form
+		padding-bottom 1.3em
+	h3
+		font-size 1.5em	
+	.encabezado			
+		margin-bottom 2.1em
+.fecha
+	margin-top -.8em
+label
+	top -.5rem !important
+	&.radioOpcion
+		top .8rem !important
+	&.active
+		transform translate(15%,-140%) !important
+		font-size 1.3em
+	&.active.labelSearch
+		transform translate(-25%,0%) !important					
+	&.labelSearch
+		margin-top -1em
+		
+#search
+	margin-top 1.2em
+	padding-left 2em !important	
+	&:focus		
+		background-color rgba(255,255,255,.4)
+		box-shadow 0 2px 0 0 orange
+#formulario	
+	-webkit-transition:all linear 0.5s
+	transition:all linear 0.5s	
+.ng-hide	
+	opacity 0
+.contenidoPage
+	width 100%
+.busquedaRapida
+	margin-top 5rem
+	.prefix
+		position relative !important
+				
+#icon_prefix:focus:not([readOnly])
+	width 140%	
+	margin-left -4rem
+	font-size 1.8em
+
+.titulointerno
+	margin-top 1.2em
+	margin-bottom 1.2em
+pagination		
+	margin-bottom 2em
+	
+
+.n-fixed
+	position fixed
+	top:0 !important	
+	width 100%
+	z-index 100000
+	transition all linear 2s
+.card-action
+	a
+		color #111111 !important
+		&:hover
+			color white !important	
+
+/* label color */
+.input-field label 
+	color #555
+   /* label focus color */
+.input-field input[type=text]:focus + label 
+	color orange
+   
+   /* label underline focus color */
+.input-field input[type=text]:focus 
+	border-bottom 1px solid orange
+	box-shadow 0 1px 0 0 orange
+	
+   /* valid color */
+.input-field input[type=text].valid 
+	border-bottom 1px solid #22B805
+	box-shadow 0 1px 0 0 #1B9418
+   
+   /* invalid color */
+.input-field input[type=text].invalid 
+	border-bottom 1px solid #FF0000
+	box-shadow 0 1px 0 0 #F00000
+   
+   /* icon prefix focus color */
+.input-field .prefix.active 
+	color #000
+

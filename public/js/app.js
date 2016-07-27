@@ -1,5 +1,5 @@
 (function(){
-	var app=angular.module("app",["ngRoute","ngAnimate","ui.materialize"])		
+	var app=angular.module("app",["ngRoute","ngAnimate","ui.materialize","nvd3"])		
 		.controller("mainController",["$http",function($http){
 			this.largo=true
 		}])

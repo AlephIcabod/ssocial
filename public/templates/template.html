@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-	<meta charset="utf-8">
-	<meta charset="utf-8">
+	<meta charset="utf-8">	
 	<title>Control Servicio Social</title>	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/nv.d3.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+
+
+
+
 </head>
 <body ng-controller="mainController as mainCtrl">
 	<header class="orange valign-wrapper">
 		<img src="images/icon.svg.ico" alt="ITO"/>
 		<span class="valign center-align flow-text titulo">Departamento de gestión tecnológica y vinculación</span>
+
+
+
+		
+
+
     </header>
 	<div id="navbar">
 	<nav>
@@ -40,21 +51,24 @@
   		<section ng-view class="contenidoPage"></section>
   	
 	
-
 	<!--Scripts-->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/FileSaver.min.js"></script>	
+	<script type="text/javascript" src="js/FileSaver.min.js"></script>
+	<script type="text/javascript" src="js/lodash.min.js"></script>		
 	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/d3.min.js"></script>
 	<script type="text/javascript" src="js/angular-route.min.js"></script>		
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script src="js/angular-animate.js"></script>	
     <script type="text/javascript" src="js/angular-materialize.min.js"></script>
+
+
 	
-
-
-
+	<script type="text/javascript" src="js/nv.d3.min.js"></script>	
+	<script type="text/javascript" src="js/angular-nvd3.min.js"></script>
 	<script type="text/javascript" src="js/mainJQ.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/estadisticas.js"></script>
 </body>
 </html>
