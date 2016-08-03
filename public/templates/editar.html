@@ -1,86 +1,86 @@
 <article>
 	<h1>{{control.titulo}}</h1>
-	<div class="row center-align encabezado">	
+	<div class="row center-align encabezado">
 		<a href="#/alumnos/{{control.id-1}}" class="btn-floating btn-small">
-		<i class="medium material-icons">skip_previous</i>
-		</a>		
+			<i class="medium material-icons">skip_previous</i>
+		</a>
 		<a href="#/alumnos/{{control.id+1}}" class="btn-floating btn-small">
 			<i class="medium material-icons">skip_next</i>
 		</a>
 	</div>
-	<div class="col s12 class="z-depth-2" valign-wrapper ng-show="control.done">		
-		<h3 class="valign center-align">
-			<a class="btn-floating btn-small" ng-click="control.done=!control.done" ng-show="control.done">	
-				<i class="medium material-icons" ng-show="!control.success">error</i>
-				<i class="medium material-icons" ng-show="control.success">done</i>		
-			</a>						
+	<div class="col s12 z-depth-2  valign-wrapper" ng-show="control.done ">
+		<h3 class="valign center-align ">
+			<a class="btn-floating btn-small " ng-click="control.done=!control.done " ng-show="control.done ">
+				<i class="medium material-icons " ng-show="!control.success ">error</i>
+				<i class="medium material-icons " ng-show="control.success ">done</i>
+			</a>
 			{{control.mensaje}}
-		</h3>		
+		</h3>
 	</div>
     </div>
 </div>
-	<div class="row">
-		<div class="col s12 m10 offset-m1">
-			<form class="nuevo" ng-submit="control.enviar()" invalidate>
-				<div class="row">					
-					<div class="input-field col s6  L4">
-          				<input id="nombre" type="text" class="validate" ng-model="control.alumno.nombre" required>
-          				<label for="nombre">Nombre</label>
-        			</div>        			
-					<div class="input-field col s4  l4">
-          				<input id="numControl" type="text" class="validate" ng-model="control.alumno.numControl" required maxlength="8" >
-          				<label for="numControl">Número de control</label>
+	<div class="row ">
+		<div class="col s12 m10 offset-m1 ">
+			<form class="nuevo " ng-submit="control.enviar() " invalidate>
+				<div class="row ">
+					<div class="input-field col s6 L4 ">
+          				<input id="nombre " type="text " class="validate " ng-model="control.alumno.nombre " required>
+          				<label for="nombre ">Nombre</label>
+        			</div>
+					<div class="input-field col s4 l4 ">
+          				<input id="numControl " type="text " class="validate " ng-model="control.alumno.numControl " required maxlength="8 " >
+          				<label for="numControl ">Número de control</label>
         			</div>
 
-        			<div class="input-field col s12 m6 l2">							  			
-						<input class="with-gap" name="sexo" type="radio" id="el" value="el"  ng-model="control.alumno.sexo"/>
-				    	<label for="el" class="radioOpcion">M</label>
-						<input class="with-gap" name="sexo" type="radio" id="la" value="la" ng-model="control.alumno.sexo"/>
-				    	<label for="la" class="radioOpcion">F</label>				
+        			<div class="input-field col s12 m6 l2 ">
+						<input class="with-gap " name="sexo " type="radio " id="el " value="el "  ng-model="control.alumno.sexo "/>
+				    	<label for="el " class="radioOpcion ">M</label>
+						<input class="with-gap " name="sexo " type="radio " id="la " value="la " ng-model="control.alumno.sexo "/>
+				    	<label for="la " class="radioOpcion ">F</label>
 			    		<label>Sexo</label>
 		  			</div>
 				</div>
-				
-				<div class="row">					
-					<div class="input-field col s12 m6 l5">
-			    		<input id="carrera" type="text" class="validate" ng-model="control.alumno.carrera" required>
-          				<label for="numControl">Carrera</label>
-		  			</div>	
-					
-					<div class="input-field col s12 m6 l2">
-						<input id="horas" type="number" min="480"  class="validate" ng-model="control.alumno.horas" required>
-          				<label for="horas">Horas</label>
+
+				<div class="row ">
+					<div class="input-field col s12 m6 l5 ">
+			    		<input id="carrera " type="text " class="validate " ng-model="control.alumno.carrera " required>
+          				<label for="numControl ">Carrera</label>
+		  			</div>
+
+					<div class="input-field col s12 m6 l2 ">
+						<input id="horas " type="number " min="480 "  class="validate " ng-model="control.alumno.horas " required>
+          				<label for="horas ">Horas</label>
 					</div>
-					<div class="input-field col s12 m6 l5">
-						<input id="dependencia" type="text" class="validate" ng-model="control.alumno.dependencia" required>
-          				<label for="dependencia">Dependencia</label>
+					<div class="input-field col s12 m6 l5 ">
+						<input id="dependencia " type="text " class="validate " ng-model="control.alumno.dependencia " required>
+          				<label for="dependencia ">Dependencia</label>
 					</div>
 				</div>
 
 
-				<div class="row">									
-					<div class="input-field col s12 m6 l3">	
-						<div class="fecha">
-							<p><input type="date" name="fechainicio" placeholder="" ng-model="control.alumno.fechainicio" class="validate" required></p>
-			    			<label>Desde</label>	    	
+				<div class="row ">
+					<div class="input-field col s12 m6 l3 ">
+						<div class="fecha ">
+							<p><input type="date " name="fechainicio " placeholder=" " ng-model="control.alumno.fechainicio " class="validate " required></p>
+			    			<label>Desde</label>
 			  			</div>
-		  			</div>  	
-			  		<div class="input-field col s12 m6 l3 ">	
-						<div class="fecha">
-							<p><input type="date" name="fechatermino" placeholder="" ng-model=control.alumno.fechatermino required class="validate"></p>
-					    	<label>Hasta</label>	    	
+		  			</div>
+			  		<div class="input-field col s12 m6 l3 ">
+						<div class="fecha ">
+							<p><input type="date " name="fechatermino " placeholder=" " ng-model=control.alumno.fechatermino required class="validate "></p>
+					    	<label>Hasta</label>
 					  	</div>
 				  	</div>
-					<div class="input-field col s12 m6 l6">
-						 <textarea id="actividades" class="materialize-textarea" ng-model="control.alumno.actividades" required></textarea>
-          					<label for="actividades">Actividades</label>
-					</div>	
+					<div class="input-field col s12 m6 l6 ">
+						 <textarea id="actividades " class="materialize-textarea " ng-model="control.alumno.actividades " required></textarea>
+          					<label for="actividades ">Actividades</label>
+					</div>
 				</div>
 
-				<div class="row center-align">
-					<button class="btn waves-effect waves-light " type="submit">
-		    			<i class="material-icons right">send</i> Guardar
-		  			</button>	
+				<div class="row center-align ">
+					<button class="btn waves-effect waves-light " type="submit ">
+		    			<i class="material-icons right ">send</i> Guardar
+		  			</button>
 				</div>
 			</form>
 		</div>
