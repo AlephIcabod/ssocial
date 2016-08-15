@@ -47,10 +47,10 @@ server.put("/alumnos/:id", querys.actualizarServidor);
 var existe = function existe(req, res, next) {
     if (req.method == "POST") {
         servidor.findOne({
-                where: {
-                    NUMCONTROL: req.body.numControl
-                }
-            })
+            where: {
+                NUMCONTROL: req.body.numControl
+            }
+        })
             .then(function(d) {
                 if (d) {
                     res.status(400)
@@ -73,8 +73,6 @@ server.post("/alumnos", querys.nuevoServidor)
 server.get("/", function(req, res) {
     res.sendFile(__dirname + "/public/templates/template.html");
 });
-
-
 
 
 var isEmpty = function(obj) {

@@ -74,7 +74,7 @@ function aux(vari) {
 
 function rangoFecha(options) {
     if (!options.fechainicio && !options.fechatermino) {
-        return ['01/01/1970', new Date()];
+        return ['01/01/1950', new Date()];
     };
     if (options.fechainicio && options.fechatermino) {
         return [options.fechainicio, options.fechatermino]
