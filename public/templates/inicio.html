@@ -1,4 +1,4 @@
-<article>   
+<article>
     <h1>Servidores sociales
     <a class="btn-floating btn-small" ng-click="control.hideForm=!control.hideForm" ng-show="!control.hideForm">
     <i class="material-icons">find_in_page</i></a>
@@ -54,10 +54,10 @@
                     <label for="dependencia">dependencia</label>
                 </div>
                 <button class="btn-floating waves-effect waves-light" type="submit">
-                <i class="material-icons right">search</i>
+                    <i class="material-icons right">search</i>
                 </button>
                 <button class="btn-floating waves-effect waves-light red" type="button" ng-click="control.hideForm=!control.hideForm">
-                <i class="material-icons right">keyboard_arrow_up</i>
+                    <i class="material-icons right">keyboard_arrow_up</i>
                 </button>
             </form>
         </div>
@@ -75,11 +75,9 @@
     <div class="row" ng-show="!control.hideForm">
         <div class="row">
             <div class="input-field col s12 m4 offset-m4 busquedaRapida">
-                <input id="icon_prefix" type="text" class="validate" 
-                ng-model="control.busNumControl" ng-keypress="$event.which===13 &&control.busquedaRapida()">
+                <input id="icon_prefix" type="text" class="validate" ng-model="control.busNumControl" ng-keypress="$event.which===13 &&control.busquedaRapida()">
                 <label for="icon_prefix">
-                    <i class="material-icons prefix">account_circle</i>
-                    Buscar por numero de control o nombre
+                    <i class="material-icons prefix">account_circle</i> Buscar por numero de control o nombre
                 </label>
             </div>
         </div>

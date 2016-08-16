@@ -1,6 +1,6 @@
 <article>
 	<h1>ESTADISTICAS</h1>
-	<div class="row">
+	<div class="row" ng-show="control.ready">
 		<div class="input-field col m3 s12 offset-m1">
 			<form>
 				<input type="radio" class="with-gap" id="histograma" ng-model="control.tipoBarras" value=0 ng-change="control.api.clearElement();control.data[0]={};control.encabezado='';control.options={};control.porGenero=false">
@@ -8,7 +8,10 @@
 				<input type="radio" class="with-gap" id="barras" ng-model="control.tipoBarras" value=1 ng-change="control.api.clearElement();control.data[0]={};control.encabezado='';control.options={}">
 				<label for="barras">Gráfica de barras</label>
 			</form>
+
+			<button ng-show="control.data.length>0" ng-click="control.toPDF()">descargar</button>
 		</div>
+
 
 		<!-- control del histograma-->
 		<div class="input-field col s4 m4" ng-show="control.tipoBarras<1 ">
@@ -16,37 +19,53 @@
 				<option value="Todas las carreras">Todas las carreras</option>
 				<option ng-repeat="carrera in control.nameCarreras track by $index">{{carrera}}</option>
 			</select>
-			<label>Carrera</label>		
+			<label>Carrera</label>
 		</div>
 
-		<!--control de la grafica de barras-->		
-		<div class="input-field col s6 m2" ng-show="control.tipoBarras>0" >
+		<!--control de la grafica de barras-->
+		<div class="input-field col s6 m2" ng-show="control.tipoBarras>0">
 			<input type="number" ng-model="control.anio" min="1965" max="2020" ng-change="control.barras()">
 			<label>Año</label>
 		</div>
 		<div class="input-field col s6 m2" ng-show="control.tipoBarras>0">
-			<input type="checkbox"  id="genero" ng-model="control.porGenero"  ng-change="control.api.clearElement();control.barras()" >
+			<input type="checkbox" id="genero" ng-model="control.porGenero" ng-change="control.api.clearElement();control.barras()">
 			<label for="genero">Ver por género</label>
 		</div>
 
 		<!--opciones histograma-->
 		<div class="col m2 s6 valign-wrap">
 			<button class="valign btn waves-effect waves-light btn-floating" ng-show="control.tipoBarras<1 " ng-click="control.histograma(control.currentCarrera)">
-			<i class="material-icons right">insert_chart</i>
+				<i class="material-icons right">insert_chart</i>
 			</button>
 
 			<!--opciones barras-->
 			<button class="valign btn waves-effect waves-light btn-floating" ng-show="	control.tipoBarras>0" ng-click="control.barras()">
-			<i class="material-icons right">insert_chart</i>
+				<i class="material-icons right">insert_chart</i>
 			</button>
 		</div>
 	</div>
 
+	<!--Espera-->
+	<div class="preloader-wrapper big active" ng-hide="control.ready">
+		<div class="row">
+			<div class="spinner-layer spinner-blue-only">
+				<div class="circle-clipper left">
+					<div class="circle"></div>
+				</div>
+				<div class="gap-patch">
+					<div class="circle"></div>
+				</div>
+				<div class="circle-clipper right">
+					<div class="circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!--Tabla de reporte-->
 
-	<div class="row">
+	<div class="row" ng-show="control.ready">
 		<div class="col s12 m10 offset-m1">
 			<nvd3 options="control.options" api="control.api" data="control.data" config="{
 			refreshDataOnly:false,
@@ -92,7 +111,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="dato in control.range">						
+					<tr ng-repeat="dato in control.range">
 						<td>{{control.data[0].values[dato].label}}</td>
 						<td class="center-align">{{control.data[0].values[dato].value}}</td>
 						<td class="center-align">{{control.data[1].values[dato].value}}</td>
@@ -109,7 +128,5 @@
 				</tfoot>
 			</table>
 		</div>
-
-
 	</div>
 </article>

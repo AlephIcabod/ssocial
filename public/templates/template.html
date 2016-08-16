@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="app">
+
 	<head>
 		<meta charset="utf-8">
 		<title>Control Servicio Social</title>
@@ -7,7 +8,11 @@
 		<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 		<link rel="stylesheet" href="css/nv.d3.min.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+		<script src="bower_components/pdfmake/build/pdfmake.min.js" charset="utf-8"></script>
+		<script src='bower_components/pdfmake/build/vfs_fonts.js'></script>
 	</head>
+
 	<body ng-controller="mainController as mainCtrl">
 		<header class="orange valign-wrapper">
 			<img src="images/icon.svg.ico" alt="ITO" />
@@ -20,8 +25,7 @@
 					<ul class="right hide-on-med-and-down">
 						<li>
 							<div class="input-field col s12 l3 orange ligth">
-								<input id="search" type="search" required ng-model="mainCtrl.busqueda" 
-								ng-keypress="$event.which===13 && mainCtrl.buscar()">
+								<input id="search" type="search" required ng-model="mainCtrl.busqueda" ng-keypress="$event.which===13 && mainCtrl.buscar()">
 								<label class="labelSearch" for="search"><i class="material-icons">search</i></label>
 							</div>
 						</li>
@@ -57,4 +61,5 @@
 		<script type="text/javascript" src="js/controllers.js"></script>
 		<script type="text/javascript" src="js/estadisticas.js"></script>
 	</body>
+
 </html>
