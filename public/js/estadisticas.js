@@ -36,7 +36,7 @@ var app = angular.module("app")
 							margin: {
 								top: 20,
 								right: 10,
-								bottom: 130,
+								bottom: 140,
 								left: 60
 							},
 							x: function (d) {
@@ -47,18 +47,18 @@ var app = angular.module("app")
 							},
 							showValues: true,
 							valueFormat: function (d) {
-								return d3.format(',')(d);
+								return d3.format('')(d);
 							},
 							transitionDuration: 2500,
 							xAxis: {
 								axisLabel: 'Carrera',
-								fontSize: ".65em",
-								rotateLabels: "-90",
+								fontSize: ".85em",
+								rotateLabels: "-45",
 								axisLabelDistance: 10
 							},
 							yAxis: {
 								axisLabel: 'Alumnos',
-								axisLabelDistance: 10
+								axisLabelDistance: 15
 							},
 							wrapLabels: true,
 						}
@@ -124,11 +124,13 @@ var app = angular.module("app")
 					xAxis: {
 						axisLabel: "Año",
 						rotateLabels: 30,
-						showMaxMin: false
+						showMaxMin: false,
+						fontSize: "1em"
 					},
 					yAxis: {
 						axisLabel: "Servidores",
-						axisLabelDistance: -10
+						axisLabelDistance: -10,
+						fontSize: "1em"
 					},
 					tooltip: {},
 					zoom: {
@@ -180,27 +182,30 @@ var app = angular.module("app")
 						margin: {
 							top: 50,
 							right: 10,
-							bottom: 100,
+							bottom: 130,
 							left: 60
 						},
 						showValues: true,
 						valueFormat: function (d) {
-							return d3.format(',')(d);
+							return d3.format('')(d);
 						},
 						transitionDuration: 2500,
 						xAxis: {
 							axisLabel: 'Carrera',
-							fontSize: ".6em",
+							fontSize: ".8em",
 							rotateLabels: "-45",
-							axisLabelDistance: 10
+							axisLabelDistance: 8
 						},
 						yAxis: {
 							axisLabel: 'Alumnos',
-							axisLabelDistance: 10
+							axisLabelDistance: 10,
+							fontSize: ".8em"
 						},
 						wrapLabels: true,
-						reduceXTicks: false
-					}
+						reduceXTicks: false,
+						showControls: false
+					},
+
 				};
 
 				if (control.anio != undefined) {
@@ -276,6 +281,7 @@ var app = angular.module("app")
 					control.totals[2] += control.data[0].values[i].value + control.data[1].values[i].value;
 				}
 			}
+
 			control.aux = function () {
 				var tableHead = [];
 				var tableBody = [];
@@ -283,7 +289,7 @@ var app = angular.module("app")
 					tableHead.push([{ text: control.options.chart.xAxis.axisLabel, style: "tableHeader" },
 						{ text: control.options.chart.yAxis.axisLabel, style: "tableHeader" }]);
 					tableBody = _.map(control.data[0].values, function (i) {
-						return [{ text: i.label, style: "tableColumn" }, { text: "" + i.value, style: "tableColumn", alignment: "right" }];
+						return [{ text: i.label, style: "tableColumn" }, { text: "" + i.value + " alumnos", style: "tableColumn", alignment: "right" }];
 					})
 				} else {
 					tableHead.push([{ text: control.options.chart.xAxis.axisLabel, style: "tableHeader" },
@@ -319,12 +325,25 @@ var app = angular.module("app")
 						{ text: "Departamento de Gestión tecnológica y vinculación ", style: "encabezado" },
 						{ text: control.encabezado, style: "titulo" },
 						{
-							table: {
-								style: "table",
-								headerRows: 1,
-								body: control.aux()
-							}
-						}
+							columns: [
+								{ width: '*', text: '' },
+								{
+									width: 'auto',
+									table: {
+										headerRows: 1,
+										body: control.aux()
+									}
+              },
+								{ width: '*', text: '' },
+            ]
+          }, {
+							text: "\n"
+          },
+						{
+							image: control.prueba(),
+							height: 500,
+							width: 900
+            }
           ],
 					styles: {
 						encabezado: {
@@ -337,27 +356,53 @@ var app = angular.module("app")
 							fontSize: 12,
 							bold: true,
 							alignment: "center",
-							margin: [0, 0, 10, 8]
+							margin: [0, 10, 0, 8]
 						},
-						table: {
-							alignment: "center"
+						tableCustom: {
+							margin: [0, 20, 0, 0],
+							tableCellPadding: [2, 2, 2, 2],
+							tableBorder: 0,
+							colorFill: "#F00",
+							backgroudn: "#0F0"
 						},
 						tableHeader: {
 							fillColor: "#f5af70",
-							fontSize: 10,
+							fontSize: 11,
 							bold: true,
 							alignment: "center",
 							margin: [0, 0, 2, 2]
 						},
 						tableColumn: {
-							fontSize: 9,
-							margin: [0, 0, 1, 1]
+							fontSize: 10,
+							margin: [1, 1, 1, 1]
 						}
 					}
 				};
+
 				pdfMake.createPdf(docDefinition)
 					.download(control.encabezado);
 			}
+
+			this.prueba = function () {
+				var e = document.getElementById('grafica')
+					.childNodes[1].childNodes[0];
+				canvg('canvas', $(e)
+					.html(), {
+						ignoreMouse: true,
+						ignoreAnimation: true,
+						scaleWidth: 1,
+						scaleHeight: 1
+					});
+
+				// the canvas calls to output a png
+				var canvas = document.getElementById("canvas");
+				var img = canvas.toDataURL("image/png");
+				console.log(document.getElementById("canvas"))
+				return img;
+			}
+
+
+
 
 
 

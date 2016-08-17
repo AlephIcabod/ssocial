@@ -8,8 +8,6 @@
 				<input type="radio" class="with-gap" id="barras" ng-model="control.tipoBarras" value=1 ng-change="control.api.clearElement();control.data[0]={};control.encabezado='';control.options={}">
 				<label for="barras">Gráfica de barras</label>
 			</form>
-
-			<button ng-show="control.data.length>0" ng-click="control.toPDF()">descargar</button>
 		</div>
 
 
@@ -42,7 +40,12 @@
 			<button class="valign btn waves-effect waves-light btn-floating" ng-show="	control.tipoBarras>0" ng-click="control.barras()">
 				<i class="material-icons right">insert_chart</i>
 			</button>
+
+			<button message="Descargando archivo" duration="2000" toast="click" ng-show="control.data.length>0" ng-click="control.toPDF()" class="valign btn waves-effect waves-light btn-floating red">
+				<i class="material-icons right">print</i></button>
 		</div>
+
+
 	</div>
 
 	<!--Espera-->
@@ -66,7 +69,7 @@
 	<!--Tabla de reporte-->
 
 	<div class="row" ng-show="control.ready">
-		<div class="col s12 m10 offset-m1">
+		<div class="col s12 m10 offset-m1" id="grafica">
 			<nvd3 options="control.options" api="control.api" data="control.data" config="{
 			refreshDataOnly:false,
 			deepWatchOptions:false,
@@ -74,7 +77,11 @@
 			deepWatchDataDepth: 2
 			}"></nvd3>
 		</div>
-
+		<div class="row">
+			<div class="col s12 m10 offset-m1">
+				<canvas id="canvas" width="2000px" height="1000px"></canvas>
+			</div>
+		</div>
 
 		<div class="col s12 m8 offset-m2" ng-show="control.porGenero==false">
 			<h2 class="center-align">{{control.encabezado}}</h2>
@@ -88,7 +95,7 @@
 				<tbody>
 					<tr ng-repeat="dato in control.data[0].values">
 						<td>{{dato.label}}</td>
-						<td class="center-align">{{dato.value}}</td>
+						<td class="center-align">{{dato.value}} alumnos</td>
 					</tr>
 				</tbody>
 			</table>
@@ -129,4 +136,6 @@
 			</table>
 		</div>
 	</div>
+
+
 </article>
