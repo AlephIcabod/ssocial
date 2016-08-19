@@ -28,7 +28,7 @@ var app = angular.module("app")
 				if (control.porGenero) {
 					control.multibar();
 				} else {
-					control.encabezado = "Servidores sociales"
+					control.encabezado = "Servidores sociales por carrera"
 					control.options = {
 						chart: {
 							type: 'discreteBarChart',
@@ -100,9 +100,10 @@ var app = angular.module("app")
 				}
 			};
 
+			//histograma
 			this.histograma = function (carrera) {
 				control.api.clearElement();
-				control.encabezado = "Servidores sociales de " + carrera;
+				control.encabezado = "Servidores sociales  " + carrera;
 				control.options.chart = {
 					color: ["#FF6600"],
 					type: "historicalBarChart",
@@ -166,9 +167,10 @@ var app = angular.module("app")
 				};
 			}
 
+			//multibarras
 			this.multibar = function () {
 				control.api.clearElement();
-				control.encabezado = "Servidores sociales "
+				control.encabezado = "Servidores sociales por carrera"
 				control.options = {
 					chart: {
 						type: 'multiBarChart',
@@ -182,7 +184,7 @@ var app = angular.module("app")
 						margin: {
 							top: 50,
 							right: 10,
-							bottom: 130,
+							bottom: 135,
 							left: 60
 						},
 						showValues: true,
@@ -282,6 +284,7 @@ var app = angular.module("app")
 				}
 			}
 
+
 			control.aux = function () {
 				var tableHead = [];
 				var tableBody = [];
@@ -340,7 +343,7 @@ var app = angular.module("app")
 							text: "\n"
           },
 						{
-							image: control.prueba(),
+							image: control.toImage(),
 							height: 500,
 							width: 900
             }
@@ -383,7 +386,7 @@ var app = angular.module("app")
 					.download(control.encabezado);
 			}
 
-			this.prueba = function () {
+			this.toImage = function () {
 				var e = document.getElementById('grafica')
 					.childNodes[1].childNodes[0];
 				canvg('canvas', $(e)
@@ -392,12 +395,9 @@ var app = angular.module("app")
 						ignoreAnimation: true,
 						scaleWidth: 1,
 						scaleHeight: 1
-					});
-
-				// the canvas calls to output a png
+					});				
 				var canvas = document.getElementById("canvas");
 				var img = canvas.toDataURL("image/png");
-				console.log(document.getElementById("canvas"))
 				return img;
 			}
 
