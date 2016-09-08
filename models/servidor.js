@@ -8,54 +8,62 @@ servidor = database.define("servidor", {
         autoIncrement: true,
         field: "id"
     },
-    NUMCONSTANCIA: {
+    numconstancia: {
         type: Sequelize.STRING,
         field: "numconstancia"
     },
-    SEXO: {
+    sexo: {
         type: Sequelize.STRING,
         field: "sexo"
     },
-    NOMBREALUMNO: {
+    nombrealumno: {
         type: Sequelize.STRING,
         field: "nombrealumno"
     },
-    NUMCONTROL: {
+    numcontrol: {
         type: Sequelize.STRING,
         field: "numcontrol"
     },
-    CARRERA: {
+    carrera: {
         type: Sequelize.STRING,
         field: "carrera"
     },
-    DEPENDENCIA: {
+    dependencia: {
         type: Sequelize.STRING,
         field: "dependencia"
     },
-    ACTIVIDADES: {
+    actividades: {
         type: Sequelize.STRING,
         field: "actividades"
     },
-    PERIODO: {
+    periodo: {
         type: Sequelize.STRING,
         field: "periodo"
     },
-    INTERESADO: {
+    interesado: {
         type: Sequelize.STRING,
         field: "interesado"
     },
-    HORAS: {
+    horas: {
         type: Sequelize.INTEGER,
         field: "horas"
     },
 
-    FECHAINICIO: {
+    fechainicio: {
         type: Sequelize.DATEONLY,
         field: "fechainicio"
     },
-    FECHATERMINO: {
+    fechatermino: {
         type: Sequelize.DATEONLY,
         field: "fechatermino"
+    },
+    calificado:{
+      type:Sequelize.BOOLEAN,
+      field:"calificado"
+    },
+    calificacion:{
+      type:Sequelize.INTEGER,
+      field:"calificacion"
     }
 }, {
     timestamps: false,

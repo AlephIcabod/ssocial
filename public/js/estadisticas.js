@@ -395,16 +395,10 @@ var app = angular.module("app")
 						ignoreAnimation: true,
 						scaleWidth: 1,
 						scaleHeight: 1
-					});				
+					});
 				var canvas = document.getElementById("canvas");
 				var img = canvas.toDataURL("image/png");
 				return img;
 			}
-
-
-
-
-
-
 			}
 			]);
