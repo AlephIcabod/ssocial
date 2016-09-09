@@ -23,6 +23,9 @@ var app = angular.module("app")
 
 			mainCtrl.busqueda = "";
 		}
+
+
+
 	}])
 	.controller("homeController", ["$http", "utilityService", function ($http, utilityService) {
 		var control = this;
@@ -91,14 +94,40 @@ var app = angular.module("app")
 				})
 				.error(function (data, status, headers, config) {});
 		}
+
 		this.currentPage = 0;
 		this.pageSize = 10;
 		this.setPage = function (index) {
 			control.currentPage = index - 1;
 		};
+		control.eliminacion = false;
+		control.idEliminar = null;
+		control.verTabla = true;
+		control.nombreEliminar = null;
+		this.eliminar = function (id, nombre) {
+			control.idEliminar = id;
+			control.eliminacion = true;
+			control.verTabla = false;
+			control.nombreEliminar = nombre;
+		}
 
+		this.cancelarEliminacion = function () {
+			control.eliminacion = false;
+			control.idEliminar = null;
+			control.verTabla = true;
+			control.nombreEliminar = null;
+		}
 
+		this.confirmarEliminacion = function () {
+			$http.delete("/alumnos/id/" + control.idEliminar)
+				.success(function (d) {
+					_.remove(control.alumnos, function (i) {
+						return i.id == control.idEliminar;
+					});
 
+					control.cancelarEliminacion();
+				})
+		}
 	}])
 	.filter('startFrom', function () {
 		return function (input, start) {
@@ -129,21 +158,13 @@ var app = angular.module("app")
 			$http.get("/alumnos/id/" + control.id)
 				.success(function (d) {
 					var data = d.data;
-					control.alumno = {
-						nombrealumno: data.nombrealumno,
-						carrera: data.carrera,
-						sexo: data.sexo,
-						numcontrol: data.numcontrol,
-						dependencia: data.dependencia,
-						actividades: data.actividades,
-						fechainicio: new Date(data.fechainicio),
-						fechatermino: new Date(data.fechatermino),
-						horas: data.horas,
-						numConstancia: data.numconstancia,
-						id: parseInt(data.id),
-						calificado: data.calificado,
-						calificacion: parseInt(data.calificacion)
-					}
+					data.fechainicio = new Date(data.fechainicio);
+					data.fechatermino = new Date(data.fechatermino);
+					data.id = parseInt(data.id);
+					calificacion = parseInt(data.calificacion);
+					console.log("respuesta", d.data);
+					control.alumno = data;
+
 					utilityService.ultimoID = control.id;
 					control.titulo = data.nombrealumno;
 					$timeout(function () {
@@ -151,13 +172,9 @@ var app = angular.module("app")
 					}, 1500);
 				})
 				.catch(function (e) {
-
 					$location.path("/notFound")
-
 				})
 		};
-
-
 
 		this.cargar();
 		this.mensaje = "";
@@ -168,7 +185,7 @@ var app = angular.module("app")
 			if (!control.alumno.calificado)
 				control.alumno.calificacion = null;
 			console.log(control.alumno);
-			$http.put("/alumnos/" + control.id, {
+			$http.put("/alumnos/id/" + control.id, {
 					servidor: control.alumno
 				})
 				.success(function (d) {

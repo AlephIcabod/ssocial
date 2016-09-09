@@ -20,31 +20,13 @@ var querys = require("./controllers/querys");
 
 server.get("/alumnos/:id/constancia", querys.generaConstancia)
 server.get("/alumnos/constancias", querys.getConstancias)
-
 server.get("/alumnos", querys.allServidores);
 server.get("/alumnos/:numControl", querys.servidorPorNumControl);
+
 server.get("/alumnos/id/:id", querys.findByID);
-var validar = function (req, res, next) {
-	if (req.method == "POST" || req.method == "PUT") {
-		var body = req.body;
-		if (body.numcontrol != null && body.numcontrol !== "" && body.nombrealumno !== "" && body.nombrealumno !== null &&
-			body.fechainicio !== null && body.fechatermino !== null) {
-			console.log("paso")
-			next();
-		} else
-			res.status(400)
-			.
-		json({
-			status: "Denegado",
-			message: "Operacion denegada por datos incorrectos"
-		});
-	} else {
-		next();
-	}
-};
-//server.use(validar);
-server.put("/alumnos/:id", querys.actualizarServidor);
-server.delete("/alumnos/:id", querys.eliminarServidor);
+server.put("/alumnos/id/:id", querys.actualizarServidor);
+server.delete("/alumnos/id/:id", querys.eliminarServidor);
+
 var existe = function existe(req, res, next) {
 	if (req.method == "POST") {
 		servidor.findOne({
@@ -60,10 +42,9 @@ var existe = function existe(req, res, next) {
 							data: d
 						});
 				} else {
-					req.body.nombre = req.body.nombre + " " + req.body.apPat + " " + req.body.apMat;
 					next();
 				}
-			})
+			});
 	} else {
 		next();
 	}

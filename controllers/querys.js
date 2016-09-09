@@ -127,7 +127,6 @@ var newServidor = function (req, res, next) {
 	servidor.max("numconstancia")
 		.then(function (d) {
 			var nuevo = req.body.servidor;
-
 			if (nuevo.sexo == "el")
 				nuevo.interesado = "al interesado";
 			else {
