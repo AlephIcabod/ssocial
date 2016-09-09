@@ -4,7 +4,7 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
-
+conexion.js
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
@@ -47,3 +47,4 @@ Temporary Items
 .apdisk
 node_modules/*/*
 
+conexion.js

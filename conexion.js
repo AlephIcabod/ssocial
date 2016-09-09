@@ -8,7 +8,7 @@ database = new Sequelize("servicio", "postgres", "israel123", {
 		min: 0,
 		idle: 10000
 	}
-//	omitNull: true
+	//	omitNull: true
 });
 
 
