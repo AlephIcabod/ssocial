@@ -27,7 +27,7 @@ var app = angular.module("app")
 
 
 	}])
-	.controller("homeController", ["$http", "utilityService", function ($http, utilityService) {
+	.controller("homeController", ["$http", "utilityService", "$timeout", function ($http, utilityService, $timeout) {
 		var control = this;
 		this.query = {
 			carrera: [],
@@ -60,8 +60,12 @@ var app = angular.module("app")
 				.catch(function () {
 					control.notFound = true;
 					control.ejecutando = false;
-					utilityService.setBusqueda(control.busNumControl)
-				})
+					$timeout(function () {
+						control.notFound = false;
+						control.busNumControl = "";
+						utilityService.setBusqueda(control.busNumControl);
+					}, 2000);
+				});
 		};
 		this.busquedaRapida();
 		this.getAll = function () {
@@ -163,7 +167,8 @@ var app = angular.module("app")
 					data.id = parseInt(data.id);
 					calificacion = parseInt(data.calificacion);
 					console.log("respuesta", d.data);
-					control.alumno = data;
+					control.alumno = _.clone(data);
+					control.original = _.clone(data);
 
 					utilityService.ultimoID = control.id;
 					control.titulo = data.nombrealumno;
@@ -176,6 +181,9 @@ var app = angular.module("app")
 				})
 		};
 
+		this.deshacer = function () {
+			control.alumno = _.clone(control.original);
+		}
 		this.cargar();
 		this.mensaje = "";
 		this.done = false;
@@ -200,6 +208,20 @@ var app = angular.module("app")
 					control.success = false;
 				});
 		}
+		this.eliminacion = false;
+		this.confirmarEliminacion = function () {
+			$http.delete("/alumnos/id/" + control.alumno.id)
+				.success(function (d) {
+					$location.path("/");
+				})
+				.catch(function (e) {
+					control.mensaje = "Error al eliminar";
+					control.done = true;
+					control.succes = false;
+				});
+		}
+
+
 	}])
 	.controller("constanciasController", ["$http", "$timeout", function ($http, $timeout) {
 		var control = this;

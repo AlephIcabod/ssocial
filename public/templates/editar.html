@@ -7,9 +7,10 @@
 		<a href="#/alumnos/{{control.id+1}}" class="btn-floating btn-small">
 			<i class="medium material-icons">skip_next</i>
 		</a>
+
 	</div>
-	<div class="col s12 center-align" ng-show="control.done">
-		<h3 >
+	<div class="col s12 center-align notificacion" ng-show="control.done">
+		<h3>
 		<a class="btn-floating btn-small" ng-click="control.done=!control.done" ng-show="control.done">
 			<i class="medium material-icons " ng-show="!control.success">error</i>
 			<i class="medium material-icons " ng-show="control.success">done</i>
@@ -17,6 +18,19 @@
 		{{control.mensaje}}
 		</h3>
 	</div>
+
+	<div class="row notificacion" ng-show="control.eliminacion">
+		<div class="col s10 offset-s1 center-align">
+			<h1>¿Esta seguro de que desea eliminar los datos del alumno {{control.nombreEliminar}}?</h1>
+				<h3>Una vez eliminados los datos no se pueden recuperar</h3>
+					<button class="btn waves-effect red" ng-click="control.confirmarEliminacion()">
+						<i class="material-icons right">delete</i> Eliminar
+					<button class="btn waves-effect green" ng-click="control.eliminacion=false">
+						<i class="material-icons right">cancel</i>Cancelar
+					</button>
+		</div>
+	</div>
+
 
 	<!--Form area-->
 	<div class="row">
@@ -105,6 +119,12 @@
 				<div class="row center-align">
 					<button class="btn waves-effect waves-light" type="submit">
 						<i class="material-icons right">send</i> Guardar
+					</button>
+					<button class="btn waves-effect" type="button" ng-click="control.deshacer()">
+						<i class="material-icons right">replay</i>Deshacer
+					</button>
+					<button ng-click="control.eliminacion=true" class="btn waves-effect red" type="button">
+						<i class="material-icons right">delete_forever</i>Eliminar
 					</button>
 				</div>
 			</form>

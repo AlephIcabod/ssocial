@@ -6,8 +6,8 @@ var db = require("../conexion")
 moment()
 	.format(),
 	fs = require("fs"),
-	Docxtemplater = require('docxtemplater');;
-
+	Docxtemplater = require('docxtemplater');
+var logger = require("../logger");
 
 var isEmpty = function (obj) {
 	return Object.keys(obj)
@@ -20,6 +20,7 @@ var getAllServidores = function (req, res, next) {
 		var query = "SELECT * from servidores";
 		db.query(query)
 			.then(function (data) {
+				logger.info("Ejecutado " + query);
 				res.status(200)
 					.json({
 						status: 'success',
@@ -29,6 +30,7 @@ var getAllServidores = function (req, res, next) {
 				next();
 			});
 	} else {
+
 		var carreras = new Array();
 		if (options.carrera !== undefined && options.carrera instanceof(Array)) {
 			for (i = 0; i < options.carrera.length; i++)
@@ -58,6 +60,7 @@ var getAllServidores = function (req, res, next) {
 				}
 			})
 			.then(function (data) {
+				logger.info("Ejecutada consulta con parametros");
 				res.status(200)
 					.json({
 						status: 'success',
@@ -104,6 +107,7 @@ var servidorNumControl = function (req, res, next) {
 			}
 		})
 		.then(function (data) {
+			logger.info("Ejecutada busqueda de " + nc);
 			if (data.length > 0) {
 				res.status(200)
 					.json({
@@ -143,9 +147,9 @@ var newServidor = function (req, res, next) {
 			nuevo.actividades = nuevo.actividades.toUpperCase();
 
 			nuevo.numconstancia = d + 1;
-			console.log(nuevo);
 			var nuevoServidor = servidor.create(nuevo)
 				.then(function (servidor) {
+					logger.info("Se ha creado un nuevo registro con id " + servidor.id);
 					res.status(201)
 						.json({
 							status: "Success",
@@ -154,7 +158,7 @@ var newServidor = function (req, res, next) {
 						});
 				})
 				.error(function (e) {
-					console.log("error ", e);
+					logger.error("error ", e);
 					res.status(400)
 						.json({
 							message: "Error al procesar informacion",
@@ -197,6 +201,7 @@ var updateServidor = function (req, res, next) {
 						returning: true
 					})
 					.then(function (d) {
+						logger.info("Actualizando datos del alumno con id " + d.id);
 						res.status(200)
 							.json({
 								status: "Success",
@@ -205,7 +210,7 @@ var updateServidor = function (req, res, next) {
 							});
 					})
 					.error(function (e) {
-						console.log("error updating ", e);
+						logger.error("error updating ", e);
 						res.status(500)
 							.json({});
 					});
@@ -221,6 +226,7 @@ var buscarID = function (req, res, next) {
 			}
 		})
 		.then(function (d) {
+			logger.info("Ejecutada busqueda con id " + d.id);
 			if (d)
 				res.status(200)
 				.json({
@@ -236,6 +242,7 @@ var buscarID = function (req, res, next) {
 				});
 		})
 		.error(function (e) {
+			logger.error("Error en busqueda ", e);
 			res.status(500);
 		})
 }
@@ -249,7 +256,6 @@ var generaConstancia = function (req, res, next) {
 		.then(function (d) {
 			if (d) {
 				crearConstancia(d);
-				console.log(__dirname)
 				var filename = "constancia.docx";
 				var filePath = __dirname + '/../files/' + filename;
 				var stat = fs.statSync(filePath);
@@ -258,9 +264,11 @@ var generaConstancia = function (req, res, next) {
 				res.set('Content-Length', stat.size);
 				res.set('Content-Disposition', filename);
 				res.send(fileToSend);
+				logger.info("Descarga de archivo de constancias");
 			}
 		})
 		.error(function (e) {
+			logger.error("Error al crear constancias ", e);
 			res.status(500);
 		});
 };
@@ -323,6 +331,7 @@ var deleteServidor = function (req, res, next) {
 			}
 		})
 		.then(function (n) {
+			logger.info("Eliminado " + n + " registros");
 			if (n == 1)
 				res.status(204)
 				.json({});
@@ -332,7 +341,7 @@ var deleteServidor = function (req, res, next) {
 			}
 		})
 		.catch(function (e) {
-			console.log("error", e);
+			logger.error("Error al eliminar ", e);
 			res.status(500);
 		})
 

@@ -62,14 +62,14 @@
             </form>
         </div>
     </div>
-    <div class="row" ng-show="control.notFound">
+    <div class="row notificacion" ng-show="control.notFound">
         <div class="col s12  center-align">
-            <h1 class="valign ">
+            <h2>
             <i class="small material-icons">
             error
             </i>
-            No se han encontrado estudiantes
-            </h1>
+            No se han encontrado resultados
+            </h2>
         </div>
     </div>
     <div class="row" ng-show="!control.hideForm">
@@ -88,14 +88,14 @@
         </div>
     </div>
 
-    <div class="row eliminar" ng-show="control.eliminacion">
+    <div class="row notificacion" ng-show="control.eliminacion">
       <div class="col s10 offset-s1 center-align">
         <h1>¿Esta seguro de que desea eliminar los datos del alumno {{control.nombreEliminar}}?</h1>
           <h3>Una vez eliminados los datos no se pueden recuperar</h3>
           	<button class="btn waves-effect red" ng-click="control.confirmarEliminacion()">
-              <i class="material-icons">delete</i> Eliminar
+              <i class="material-icons right">delete</i> Eliminar
             <button class="btn waves-effect green" ng-click="control.cancelarEliminacion()">
-              <i class="material-icons">ok</i>Cancelar
+              <i class="material-icons right">cancel</i>Cancelar
             </button>
       </div>
     </div>

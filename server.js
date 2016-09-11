@@ -1,7 +1,8 @@
 var express = require("express"),
 	server = express(),
 	swig = require("swig"),
-	bodyParser = require("body-parser");
+	bodyParser = require("body-parser"),
+	logger = require("./logger");
 
 server.engine("html", swig.renderFile);
 server.set("view engine", "html");
@@ -13,11 +14,18 @@ server.use(bodyParser.urlencoded({
 }));
 server.use(bodyParser.json());
 
+
+
+
 var servidor = require("./models/servidor");
 var querys = require("./controllers/querys");
 
 //RESPUESTAS DE LA API
 
+server.use(function (req, res, next) {
+	logger.info("REQUEST " + req.method + " : " + req.url);
+	next();
+});
 server.get("/alumnos/:id/constancia", querys.generaConstancia)
 server.get("/alumnos/constancias", querys.getConstancias)
 server.get("/alumnos", querys.allServidores);
@@ -63,5 +71,5 @@ var isEmpty = function (obj) {
 }
 
 server.listen(3000, function () {
-	console.log("Iniciando")
+	logger.info("Iniciando")
 });
