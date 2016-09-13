@@ -304,9 +304,10 @@ var app = angular.module("app")
 					}, 2500);
 				})
 				.error(function (d) {
+					console.log(d);
 					control.done = true;
 					control.success = false;
-					control.mensaje = "Algo salio mal con los datos, revisar";
+					control.mensaje = d.message + " corresponde a " + d.data.nombrealumno;
 				})
 		};
 		this.reset = function () {

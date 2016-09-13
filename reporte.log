@@ -321,3 +321,122 @@
 {"level":"info","message":"Eliminado 1 registros","timestamp":"2016-09-11T03:48:53.899Z"}
 {"level":"info","message":"REQUEST GET : /alumnos/13","timestamp":"2016-09-11T03:49:00.608Z"}
 {"level":"info","message":"Ejecutada busqueda de 13","timestamp":"2016-09-11T03:49:00.624Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-12T00:27:14.418Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-12T00:27:14.442Z"}
+{"level":"info","message":"REQUEST GET : /browser-sync/socket.io/?EIO=3&transport=polling&t=LSRodTI","timestamp":"2016-09-12T00:27:16.186Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/13","timestamp":"2016-09-12T00:27:21.140Z"}
+{"level":"info","message":"Ejecutada busqueda de 13","timestamp":"2016-09-12T00:27:21.773Z"}
+{"level":"info","message":"REQUEST GET : /browser-sync/socket.io/?EIO=3&transport=polling&t=LSRofAh","timestamp":"2016-09-12T00:27:23.189Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/6399/constancia","timestamp":"2016-09-12T00:27:24.128Z"}
+{"level":"info","message":"Descarga de archivo de constancias","timestamp":"2016-09-12T00:27:24.693Z"}
+{"level":"info","message":"REQUEST GET : /browser-sync/socket.io/?EIO=3&transport=polling&t=LSRogu9","timestamp":"2016-09-12T00:27:30.200Z"}
+{"level":"info","message":"REQUEST GET : /browser-sync/socket.io/?EIO=3&transport=polling&t=LSRoibR","timestamp":"2016-09-12T00:27:37.202Z"}
+{"level":"info","message":"REQUEST GET : /browser-sync/socket.io/?EIO=3&transport=polling&t=LSRokDF","timestamp":"2016-09-12T00:27:43.835Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-12T00:29:14.614Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/6399/constancia","timestamp":"2016-09-12T00:29:23.466Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-12T03:51:34.093Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-12T17:13:34.756Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-12T17:13:35.898Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/13","timestamp":"2016-09-12T17:13:56.457Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-12T17:14:33.406Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-12T17:14:36.037Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-12T17:15:08.296Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-12T17:15:17.715Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-12T17:15:34.463Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/13","timestamp":"2016-09-12T17:15:40.021Z"}
+{"level":"info","message":"Ejecutada busqueda de 13","timestamp":"2016-09-12T17:15:42.368Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/13","timestamp":"2016-09-12T17:16:29.120Z"}
+{"level":"info","message":"Ejecutada busqueda de 13","timestamp":"2016-09-12T17:16:29.199Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/1216","timestamp":"2016-09-12T17:17:03.436Z"}
+{"level":"info","message":"Ejecutada busqueda de 1216","timestamp":"2016-09-12T17:17:03.633Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131","timestamp":"2016-09-12T17:24:41.624Z"}
+{"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-12T17:24:41.713Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/6399","timestamp":"2016-09-12T17:24:46.022Z"}
+{"level":"info","message":"Ejecutada busqueda con id 6399","timestamp":"2016-09-12T17:24:46.030Z"}
+{"level":"info","message":"REQUEST PUT : /alumnos/id/6399","timestamp":"2016-09-12T17:25:03.022Z"}
+{"level":"info","message":"Actualizando datos del alumno con id undefined","timestamp":"2016-09-12T17:25:03.444Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/6399","timestamp":"2016-09-12T17:25:03.464Z"}
+{"level":"info","message":"Ejecutada busqueda con id 6399","timestamp":"2016-09-12T17:25:03.476Z"}
+{"level":"info","message":"REQUEST GET : /alumnos","timestamp":"2016-09-12T17:27:12.667Z"}
+{"level":"info","message":"Ejecutado SELECT * from servidores","timestamp":"2016-09-12T17:27:13.210Z"}
+{"level":"info","message":"REQUEST GET : /alumnos?dependencia=&fechainicio=1966-01-01T06:00:00.000Z&sexo=","timestamp":"2016-09-12T17:27:39.884Z"}
+{"level":"info","message":"Ejecutada consulta con parametros","timestamp":"2016-09-12T17:27:41.223Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/87160602","timestamp":"2016-09-12T17:27:51.222Z"}
+{"level":"info","message":"Ejecutada busqueda de 87160602","timestamp":"2016-09-12T17:27:51.237Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131","timestamp":"2016-09-12T17:33:08.583Z"}
+{"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-12T17:33:08.659Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/6399","timestamp":"2016-09-12T17:33:11.906Z"}
+{"level":"info","message":"Ejecutada busqueda con id 6399","timestamp":"2016-09-12T17:33:11.914Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-12T17:37:19.217Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 18984","timestamp":"2016-09-12T17:37:19.721Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/18984","timestamp":"2016-09-12T17:37:21.833Z"}
+{"level":"info","message":"Ejecutada busqueda con id 18984","timestamp":"2016-09-12T17:37:21.842Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/13160640","timestamp":"2016-09-12T17:37:28.589Z"}
+{"level":"info","message":"Ejecutada busqueda de 13160640","timestamp":"2016-09-12T17:37:28.606Z"}
+{"level":"info","message":"REQUEST DELETE : /alumnos/id/18984","timestamp":"2016-09-12T17:37:33.806Z"}
+{"level":"info","message":"Eliminado 1 registros","timestamp":"2016-09-12T17:37:33.824Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:16:49.233Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T02:16:52.067Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-13T02:17:13.213Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-13T02:17:13.216Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T02:17:18.035Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T02:19:47.452Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/13","timestamp":"2016-09-13T02:21:34.196Z"}
+{"level":"info","message":"Ejecutada busqueda de 13","timestamp":"2016-09-13T02:21:34.841Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-13T02:21:58.259Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 18985","timestamp":"2016-09-13T02:21:58.625Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-13T02:22:19.793Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:23:30.605Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T02:23:32.270Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-13T02:24:07.244Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T02:24:11.155Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-13T02:24:11.180Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-13T02:24:11.184Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-13T02:24:11.279Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:24:47.191Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:25:06.968Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:25:37.224Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T02:25:39.499Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-13T02:25:39.876Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-13T02:25:40.490Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-13T02:25:40.495Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T02:25:40.505Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-13T02:26:04.851Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131","timestamp":"2016-09-13T02:26:14.647Z"}
+{"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-13T02:26:14.665Z"}
+{"level":"info","message":"REQUEST DELETE : /alumnos/id/18985","timestamp":"2016-09-13T02:26:17.956Z"}
+{"level":"info","message":"Eliminado 1 registros","timestamp":"2016-09-13T02:26:18.046Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2010-01-01T06:00:00.000Z&fechatermino=2016-09-13T02:27:12.099Z","timestamp":"2016-09-13T02:27:28.685Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:27:49.888Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2010-01-01T06:00:00.000Z&fechatermino=2016-09-13T02:27:12.099Z","timestamp":"2016-09-13T02:27:49.930Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:28:11.032Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T02:28:31.973Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-13T02:28:32.280Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-13T02:28:32.775Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-13T02:28:32.885Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T02:28:33.197Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2010-01-01T06:00:00.000Z&fechatermino=2016-01-02T03:28:33.298Z","timestamp":"2016-09-13T02:28:51.230Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:28:56.953Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2010-01-01T06:00:00.000Z&fechatermino=2016-01-02T03:28:33.298Z","timestamp":"2016-09-13T02:28:57.068Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:29:16.835Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T02:29:26.797Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T02:29:29.300Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-13T02:29:29.639Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-13T02:29:30.318Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-13T02:29:30.321Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T02:29:30.324Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2010-01-01T06:00:00.000Z&fechatermino=2016-09-13T02:29:30.741Z","timestamp":"2016-09-13T02:29:47.063Z"}
+{"level":"info","message":"REQUEST GET : /alumnos","timestamp":"2016-09-13T03:10:57.125Z"}
+{"level":"info","message":"Ejecutado SELECT * from servidores","timestamp":"2016-09-13T03:10:58.684Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-13T03:11:29.515Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-13T03:11:29.517Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T03:11:29.519Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-13T03:11:29.730Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T03:18:26.093Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T03:18:29.081Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-13T03:18:29.451Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-13T03:18:30.108Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-13T03:18:30.110Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T03:18:30.128Z"}
+{"level":"info","message":"REQUEST GET : /alumnos","timestamp":"2016-09-13T03:18:30.342Z"}
+{"level":"info","message":"Ejecutado SELECT * from servidores","timestamp":"2016-09-13T03:18:30.873Z"}

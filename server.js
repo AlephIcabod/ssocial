@@ -39,7 +39,7 @@ var existe = function existe(req, res, next) {
 	if (req.method == "POST") {
 		servidor.findOne({
 				where: {
-					numcontrol: req.body.numControl
+					numcontrol: req.body.servidor.numcontrol
 				}
 			})
 			.then(function (d) {
