@@ -440,3 +440,44 @@
 {"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T03:18:30.128Z"}
 {"level":"info","message":"REQUEST GET : /alumnos","timestamp":"2016-09-13T03:18:30.342Z"}
 {"level":"info","message":"Ejecutado SELECT * from servidores","timestamp":"2016-09-13T03:18:30.873Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T16:55:38.429Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T16:55:40.621Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-13T16:55:41.776Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-13T16:55:41.780Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131","timestamp":"2016-09-13T16:55:48.173Z"}
+{"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-13T16:55:50.520Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131","timestamp":"2016-09-13T16:56:37.210Z"}
+{"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-13T16:56:37.298Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/6399/constancia","timestamp":"2016-09-13T16:56:39.305Z"}
+{"level":"info","message":"Descarga de archivo de constancias","timestamp":"2016-09-13T16:56:39.742Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-13T17:05:07.366Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 18986","timestamp":"2016-09-13T17:05:07.771Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-13T17:05:38.169Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T18:01:01.847Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T18:01:05.221Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/1316","timestamp":"2016-09-13T18:01:12.198Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/1316","timestamp":"2016-09-13T18:03:12.206Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T18:05:13.114Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-13T18:23:39.020Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-13T20:53:05.293Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-13T20:53:18.808Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131","timestamp":"2016-09-13T20:53:22.226Z"}
+{"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-13T20:53:23.218Z"}
+{"level":"info","message":"REQUEST GET : /alumnos","timestamp":"2016-09-13T20:53:53.590Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-13T20:54:08.554Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-13T20:54:08.557Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-13T20:54:08.636Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-13T20:54:09.633Z"}
+{"level":"info","message":"Ejecutado SELECT * from servidores","timestamp":"2016-09-13T20:54:12.690Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/1116","timestamp":"2016-09-13T20:54:42.448Z"}
+{"level":"info","message":"Ejecutada busqueda de 1116","timestamp":"2016-09-13T20:54:43.921Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/384","timestamp":"2016-09-13T20:54:47.668Z"}
+{"level":"info","message":"Ejecutada busqueda con id 384","timestamp":"2016-09-13T20:54:47.871Z"}
+{"level":"info","message":"Iniciando","timestamp":"2016-09-14T03:34:16.080Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-14T03:34:16.810Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-14T03:34:17.828Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-14T03:34:17.837Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131","timestamp":"2016-09-14T03:34:27.187Z"}
+{"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-14T03:34:27.493Z"}
+{"level":"info","message":"REQUEST GET : /alumnos","timestamp":"2016-09-14T03:34:33.312Z"}
+{"level":"info","message":"Ejecutado SELECT * from servidores","timestamp":"2016-09-14T03:34:57.015Z"}
