@@ -69,7 +69,7 @@ var isEmpty = function (obj) {
 	return Object.keys(obj)
 		.length === 0;
 }
-
-server.listen(3000, function () {
+server.set("port", 3000)
+server.listen(server.get("port"), function () {
 	logger.info("Iniciando")
 });
