@@ -71,5 +71,5 @@ var isEmpty = function (obj) {
 }
 server.set("port", 3000)
 server.listen(server.get("port"), function () {
-	logger.info("Iniciando")
+	logger.info("Iniciando en el puerto", server.get("port"));
 });
