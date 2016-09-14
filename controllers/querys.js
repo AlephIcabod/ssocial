@@ -7,7 +7,8 @@ moment()
 	.format(),
 	fs = require("fs"),
 	Docxtemplater = require('docxtemplater');
-var logger = require("../logger");
+var logger = require("../logger"),
+	path = require("path");
 
 var isEmpty = function (obj) {
 	return Object.keys(obj)
@@ -308,8 +309,10 @@ var constancias = function (req, res, next) {
 }
 
 var crearConstancia = function (datos) {
+	console.log(__dirname);
+	console.log(path.join(__dirname, "../files", "plantilla.docx"))
 	var content = fs
-		.readFileSync("../sistema/files/plantilla.docx", "binary");
+		.readFileSync(path.join(__dirname, "../files", "plantilla.docx"));
 	var doc = new Docxtemplater(content);
 	//set the templateVariables
 	doc.setData({
@@ -320,7 +323,7 @@ var crearConstancia = function (datos) {
 		.generate({
 			type: "nodebuffer"
 		});
-	fs.writeFileSync("../sistema/files/constancia.docx", buf);
+	fs.writeFileSync(path.join(__dirname, "../files", "constancia.docx"), buf);
 }
 
 var deleteServidor = function (req, res, next) {
