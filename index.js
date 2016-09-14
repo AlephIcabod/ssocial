@@ -69,7 +69,7 @@ var isEmpty = function (obj) {
 	return Object.keys(obj)
 		.length === 0;
 }
-server.set("port", proccess.env.PORT || 3000)
+server.set("port", process.env.PORT || 3000)
 server.listen(server.get("port"), function () {
 	logger.info("Iniciando en el puerto", server.get("port"));
 });
