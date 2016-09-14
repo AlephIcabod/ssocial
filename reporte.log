@@ -481,3 +481,4 @@
 {"level":"info","message":"Ejecutada busqueda de 131","timestamp":"2016-09-14T03:34:27.493Z"}
 {"level":"info","message":"REQUEST GET : /alumnos","timestamp":"2016-09-14T03:34:33.312Z"}
 {"level":"info","message":"Ejecutado SELECT * from servidores","timestamp":"2016-09-14T03:34:57.015Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-14T04:25:23.853Z"}
