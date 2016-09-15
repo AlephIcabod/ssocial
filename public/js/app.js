@@ -5,7 +5,7 @@
 		}])
 		.config(function ($routeProvider, $authProvider) {
 			console.log($authProvider);
-			$authProvider.loginUrl = "http://localhost:3000/login";
+			$authProvider.loginUrl = "http://ssocial.herokuapp.com/login";
 			$authProvider.tokenPrefix = "AppSS";
 
 			$routeProvider.when("/sistema", {
