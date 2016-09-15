@@ -1,0 +1,27 @@
+<article >
+  <h1 class="encabezado">Ingresar al sistema</h1>
+<div class="row notification" ng-show="control.errorLogin">
+  <div class="col m4 offset-m4 s12">
+  <p class="center-align error">
+    Nombre de usuario o contraseña incorrectos
+  </p>
+  </div>
+</div>
+
+<div class="row">
+  <form class="invalidate">
+  <div class="col m4 offset-m4 s12">
+    <div class="input-field">
+    <input type="text" name="name" ng-model="control.username" class="validate" required/>
+    <label for="name" class="loginLabel">Nombre de usuario</label>
+    </div>
+    <div class="input-field">
+      <input type="password" name="password" ng-model="control.password" class="validate" required/>
+      <label for="password" class="loginLabel">Contraseña</label>
+    </div>
+    <button type="button" name="button" class="btn waves-effect waves-light right green" ng-click="control.login()">Ingresar</button>
+  </div>
+  </form>
+</div>
+
+</article>

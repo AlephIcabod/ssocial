@@ -22,23 +22,31 @@
 			<nav>
 				<div class="nav-wrapper orange">
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-					<ul class="right hide-on-med-and-down">
+					<ul class="right hide-on-med-and-down" ng-show="mainCtrl.isLogged">
 						<li>
 							<div class="input-field col s12 l3 orange ligth">
 								<input id="search" type="search" required ng-model="mainCtrl.busqueda" ng-keypress="$event.which===13 && mainCtrl.buscar()">
 								<label class="labelSearch" for="search"><i class="material-icons">search</i></label>
 							</div>
 						</li>
-						<li><a href="#/">Inicio</a></li>
+						<li><a href="#/sistema">Inicio</a></li>
 						<li><a href="#/nuevo">Nuevo</a></li>
 						<li><a href="#/constancias">Constancias</a></li>
 						<li><a href="#/estadisticas">Estadísticas</a></li>
+						<li><a ng-click="mainCtrl.logout()">Salir</a></li>
 					</ul>
-					<ul class="side-nav" id="mobile-demo">
-						<li><a href="#/">Inicio</a></li>
+					<ul class="side-nav" id="mobile-demo" ng-show="mainCtrl.isLogged">
+						<li>
+							<div class="input-field col s12 l3 orange ligth">
+								<input id="search" type="search" required ng-model="mainCtrl.busqueda" ng-keypress="$event.which===13 && mainCtrl.buscar()">
+								<label class="labelSearch" for="search"><i class="material-icons">search</i></label>
+							</div>
+						</li>
+						<li><a href="#/sistema">Inicio</a></li>
 						<li><a href="#/nuevo">Nuevo</a></li>
-						<li><a href="#/constancias">Cartas</a></li>
+						<li><a href="#/constancias">Constancias</a></li>
 						<li><a href="#/estadisticas">Estadísticas</a></li>
+						<li><a ng-click="mainCtrl.logout()">Salir</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -60,7 +68,7 @@
 		<script type="text/javascript" src="js/app.js"></script>
 		<script type="text/javascript" src="js/controllers.js"></script>
 		<script type="text/javascript" src="js/estadisticas.js"></script>
-
+		<script src="\bower_components\satellizer\dist\satellizer.min.js" charset="utf-8"></script>
 
 		<script type="text/javascript" src="js/libs/rgbcolor.js"></script>
 		<script type="text/javascript" src="js/libs/stackBlur.js"></script>

@@ -11,8 +11,9 @@ var app = angular.module("app")
 			}
 		}
 	})
-	.controller("mainController", ["$location", "utilityService", "$route", function ($location, utilityService, $route) {
+	.controller("mainController", ["$location", "utilityService", "$route", "$auth", "authFact", function ($location, utilityService, $route, $auth, authFact) {
 		mainCtrl = this;
+		this.isLogged = false;
 		this.busqueda = utilityService.getBusqueda();
 		this.buscar = function () {
 			utilityService.setBusqueda(mainCtrl.busqueda);
@@ -24,7 +25,14 @@ var app = angular.module("app")
 			mainCtrl.busqueda = "";
 		}
 
-
+		this.logout = function () {
+			$auth.logout()
+				.then(function () {
+					authFact.setAccessToken(null);
+					$location.path("/");
+					mainCtrl.isLogged = false;
+				});
+		}
 
 	}])
 	.controller("homeController", ["$http", "utilityService", "$timeout", function ($http, utilityService, $timeout) {
@@ -327,4 +335,28 @@ var app = angular.module("app")
 				calificacion: 100
 			}
 		};
+	}])
+	.controller("loginController", ["$scope", "$auth", "$location", "authFact", "$timeout", function ($scope, $auth, $location, authFact, $timeout) {
+		var control = this;
+		if ($scope.$parent.mainCtrl.isLogged)
+			$location.path("/sistema");
+		this.login = function () {
+			$auth.login({
+					username: control.username,
+					password: control.password
+				})
+				.then(function (d) {
+					authFact.setAccessToken(d.data.token);
+					$location.path("/sistema");
+					control.errorLogin = false;
+					$scope.$parent.mainCtrl.isLogged = true;
+				})
+				.catch(function (response) {
+
+					control.errorLogin = true;
+					$timeout(function () {
+						control.errorLogin = false
+					}, 2000)
+				});
+		}
 	}]);
