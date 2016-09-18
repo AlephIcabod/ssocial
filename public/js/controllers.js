@@ -335,7 +335,7 @@ var app = angular.module("app")
 				actividades: "Actividades administrativas",
 				fechainicio: "",
 				fechatermino: "",
-				calificado: null,
+				calificado: true,
 				calificacion: 100
 			}
 		};
