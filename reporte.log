@@ -528,3 +528,99 @@
 {"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-15T20:29:50.631Z"}
 {"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-15T20:30:30.406Z"}
 {"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-15T20:30:39.311Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-15T20:30:49.806Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-15T20:30:52.167Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-15T20:30:54.203Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-15T20:31:15.510Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T01:52:16.169Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T02:15:49.758Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-16T22:13:07.176Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-16T22:13:07.350Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-16T22:13:08.534Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-16T22:13:10.456Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-16T22:13:10.591Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-16T22:13:10.675Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-16T22:13:14.127Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/11160525","timestamp":"2016-09-16T22:13:38.220Z"}
+{"level":"info","message":"Ejecutada busqueda de 11160525","timestamp":"2016-09-16T22:13:39.331Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/11160532","timestamp":"2016-09-16T22:13:52.762Z"}
+{"level":"info","message":"Ejecutada busqueda de 11160532","timestamp":"2016-09-16T22:13:53.725Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/770","timestamp":"2016-09-16T22:13:59.916Z"}
+{"level":"info","message":"Ejecutada busqueda con id 770","timestamp":"2016-09-16T22:14:00.112Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:14:32.669Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:15:28.036Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:15:30.374Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-16T22:15:44.204Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-16T22:15:44.216Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-16T22:15:44.249Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-16T22:15:44.314Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-16T22:15:50.519Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-16T22:15:50.918Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-16T22:15:51.663Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-16T22:15:51.666Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-16T22:15:51.675Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-16T22:16:02.918Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/11160525","timestamp":"2016-09-16T22:16:10.732Z"}
+{"level":"info","message":"Ejecutada busqueda de 11160525","timestamp":"2016-09-16T22:16:11.836Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/11160532","timestamp":"2016-09-16T22:16:28.226Z"}
+{"level":"info","message":"Ejecutada busqueda de 11160532","timestamp":"2016-09-16T22:16:29.193Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/770","timestamp":"2016-09-16T22:16:31.724Z"}
+{"level":"info","message":"Ejecutada busqueda con id 770","timestamp":"2016-09-16T22:16:31.931Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:16:54.152Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-16T22:16:58.466Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-16T22:16:58.927Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-16T22:16:59.647Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-16T22:16:59.652Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-16T22:16:59.658Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-16T22:17:01.062Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/11160532","timestamp":"2016-09-16T22:17:05.163Z"}
+{"level":"info","message":"Ejecutada busqueda de 11160532","timestamp":"2016-09-16T22:17:05.395Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/770","timestamp":"2016-09-16T22:17:07.599Z"}
+{"level":"info","message":"Ejecutada busqueda con id 770","timestamp":"2016-09-16T22:17:07.801Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/771","timestamp":"2016-09-16T22:17:41.346Z"}
+{"level":"info","message":"Ejecutada busqueda con id 771","timestamp":"2016-09-16T22:17:42.303Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/772","timestamp":"2016-09-16T22:17:49.842Z"}
+{"level":"info","message":"Ejecutada busqueda con id 772","timestamp":"2016-09-16T22:17:50.043Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/773","timestamp":"2016-09-16T22:17:51.740Z"}
+{"level":"info","message":"Ejecutada busqueda con id 773","timestamp":"2016-09-16T22:17:51.937Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/774","timestamp":"2016-09-16T22:17:54.793Z"}
+{"level":"info","message":"Ejecutada busqueda con id 774","timestamp":"2016-09-16T22:17:54.993Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/775","timestamp":"2016-09-16T22:17:56.170Z"}
+{"level":"info","message":"Ejecutada busqueda con id 775","timestamp":"2016-09-16T22:17:56.371Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/11160525","timestamp":"2016-09-16T22:19:29.450Z"}
+{"level":"info","message":"Ejecutada busqueda de 11160525","timestamp":"2016-09-16T22:19:30.415Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/19276","timestamp":"2016-09-16T22:19:33.882Z"}
+{"level":"info","message":"Ejecutada busqueda con id 19276","timestamp":"2016-09-16T22:19:34.082Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:45:13.542Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-16T22:47:17.880Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 19282","timestamp":"2016-09-16T22:47:19.393Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:49:00.064Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-16T22:49:04.832Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-16T22:49:05.252Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-16T22:49:06.282Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-16T22:49:06.286Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-16T22:49:06.298Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-16T22:49:07.865Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-16T22:50:07.289Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 19283","timestamp":"2016-09-16T22:50:08.884Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:50:40.838Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-16T22:50:42.944Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-16T22:50:43.353Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-16T22:50:44.116Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-16T22:50:44.123Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-16T22:50:44.126Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-16T22:50:49.922Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-16T22:51:31.318Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-16T22:52:01.604Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 19284","timestamp":"2016-09-16T22:52:03.636Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-16T22:52:46.059Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 19285","timestamp":"2016-09-16T22:52:49.501Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T22:53:17.355Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T23:15:13.523Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-16T23:45:13.332Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T00:15:13.503Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T00:45:13.455Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T01:15:24.268Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T21:36:07.393Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T21:46:11.900Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T22:09:20.942Z"}

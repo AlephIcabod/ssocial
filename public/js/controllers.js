@@ -170,8 +170,12 @@ var app = angular.module("app")
 			$http.get("/alumnos/id/" + control.id)
 				.success(function (d) {
 					var data = d.data;
+					console.log(data.fechainicio);
 					data.fechainicio = new Date(data.fechainicio);
 					data.fechatermino = new Date(data.fechatermino);
+
+					console.log(data.fechainicio);
+
 					data.id = parseInt(data.id);
 					calificacion = parseInt(data.calificacion);
 					console.log("respuesta", d.data);
@@ -293,7 +297,7 @@ var app = angular.module("app")
 			actividades: "Actividades administrativas",
 			fechainicio: "",
 			fechatermino: "",
-			calificado: null,
+			calificado: true,
 			calificacion: 100
 		}
 		this.enviar = function () {

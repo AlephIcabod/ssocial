@@ -4,7 +4,6 @@
 			this.largo = true
 		}])
 		.config(function ($routeProvider, $authProvider) {
-			console.log($authProvider);
 			$authProvider.loginUrl = "/login";
 			$authProvider.tokenPrefix = "AppSS";
 
@@ -68,7 +67,6 @@
 		$rootScope.$on("$routeChangeStart", function (event, next, current) {
 			if (next.$$route.authenticated) {
 				var userAuth = authFact.getAcccessToken();
-				console.log(userAuth);
 				if (!userAuth) {
 					$location.path("/");
 				}
