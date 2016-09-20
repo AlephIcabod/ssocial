@@ -51,7 +51,7 @@ var getAllServidores = function (req, res, next) {
 					sexo: {
 						$like: aux(options.sexo)
 					},
-					fechainicio: {
+					fechatermino: {
 						$between: rangoFecha(options)
 					},
 					dependencia: {
@@ -256,16 +256,18 @@ var generaConstancia = function (req, res, next) {
 		})
 		.then(function (d) {
 			if (d) {
-				crearConstancia(d);
-				var filename = "constancia.docx";
-				var filePath = __dirname + '/../files/' + filename;
-				var stat = fs.statSync(filePath);
-				var fileToSend = fs.readFileSync(filePath);
-				res.set('Content-Type', 'docx/text');
-				res.set('Content-Length', stat.size);
-				res.set('Content-Disposition', filename);
-				res.send(fileToSend);
-				logger.info("Descarga de archivo de constancias");
+				crearConstancia(d, function () {
+					var filename = "constancia.docx";
+					var filePath = __dirname + '/../files/' + filename;
+					var stat = fs.statSync(filePath);
+					var fileToSend = fs.readFileSync(filePath);
+					res.set('Content-Type', 'docx/text');
+					res.set('Content-Length', stat.size);
+					res.set('Content-Disposition', filename);
+					res.send(fileToSend);
+					logger.info("Descarga de archivo de constancias");
+				});
+
 			}
 		})
 		.error(function (e) {
@@ -277,24 +279,26 @@ var generaConstancia = function (req, res, next) {
 var constancias = function (req, res, next) {
 	var finicio = req.query.fechainicio;
 	var ftermino = req.query.fechatermino;
+
 	servidor.findAll({
 			where: {
 				fechatermino: {
-					$between: rangoFecha(req.query)
+					$between: [finicio, ftermino]
 				}
 			}
 		})
 		.then(function (d) {
 			if (d.length > 0) {
-				crearConstancia(d);
-				var filename = "constancia.docx";
-				var filePath = __dirname + '/../files/' + filename;
-				var stat = fs.statSync(filePath);
-				var fileToSend = fs.readFileSync(filePath);
-				res.set('Content-Type', 'docx/text');
-				res.set('Content-Length', stat.size);
-				res.set('Content-Disposition', filename);
-				res.send(fileToSend);
+				crearConstancia(d, function () {
+					var filename = "constancia.docx";
+					var filePath = __dirname + '/../files/' + filename;
+					var stat = fs.statSync(filePath);
+					var fileToSend = fs.readFileSync(filePath);
+					res.set('Content-Type', 'docx/text');
+					res.set('Content-Length', stat.size);
+					res.set('Content-Disposition', filename);
+					res.send(fileToSend);
+				});
 			} else {
 				res.status(404)
 				res.json({
@@ -302,15 +306,14 @@ var constancias = function (req, res, next) {
 					message: "No hay servidores que concluyeran servicio social en ese periodo"
 				})
 			}
+
 		})
 		.error(function (e) {
 			res.status(500);
 		});
 }
 
-var crearConstancia = function (datos) {
-	console.log(__dirname);
-	console.log(path.join(__dirname, "../files", "plantilla.docx"))
+var crearConstancia = function (datos, cb) {
 	var content = fs
 		.readFileSync(path.join(__dirname, "../files", "plantilla.docx"));
 	var doc = new Docxtemplater(content);
@@ -324,6 +327,7 @@ var crearConstancia = function (datos) {
 			type: "nodebuffer"
 		});
 	fs.writeFileSync(path.join(__dirname, "../files", "constancia.docx"), buf);
+	cb();
 }
 
 var deleteServidor = function (req, res, next) {

@@ -624,3 +624,32 @@
 {"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T21:36:07.393Z"}
 {"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T21:46:11.900Z"}
 {"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-17T22:09:20.942Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-20T04:13:41.505Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-20T04:13:44.877Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-20T04:13:45.329Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-20T04:13:49.346Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-20T04:13:49.348Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-20T04:13:49.379Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-20T04:13:54.154Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-20T04:13:58.634Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/13","timestamp":"2016-09-20T04:14:01.908Z"}
+{"level":"info","message":"Ejecutada busqueda de 13","timestamp":"2016-09-20T04:14:02.220Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/19787/constancia","timestamp":"2016-09-20T04:14:06.569Z"}
+{"level":"info","message":"Descarga de archivo de constancias","timestamp":"2016-09-20T04:14:07.155Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-20T04:14:08.874Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-20T04:14:12.048Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-20T04:14:13.974Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2015-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:14:30.705Z","timestamp":"2016-09-20T04:14:45.023Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-20T04:14:54.552Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2015-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:14:30.705Z","timestamp":"2016-09-20T04:14:54.756Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-20T04:15:03.837Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-20T04:15:30.186Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-20T04:15:32.579Z"}
+{"level":"info","message":"REQUEST GET : /css/nv.d3.min.css.map","timestamp":"2016-09-20T04:15:32.933Z"}
+{"level":"info","message":"REQUEST GET : /js/angular.min.js.map","timestamp":"2016-09-20T04:15:33.554Z"}
+{"level":"info","message":"REQUEST GET : /js/angular-route.min.js.map","timestamp":"2016-09-20T04:15:33.564Z"}
+{"level":"info","message":"REQUEST GET : /js/nv.d3.min.js.map","timestamp":"2016-09-20T04:15:33.566Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-20T04:15:35.853Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2015-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:15:37.946Z","timestamp":"2016-09-20T04:15:47.160Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2014-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:15:37.946Z","timestamp":"2016-09-20T04:16:05.857Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2000-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:15:37.946Z","timestamp":"2016-09-20T04:16:25.353Z"}
