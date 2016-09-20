@@ -188,8 +188,8 @@ var updateServidor = function (req, res, next) {
 					servidorExistente.interesado = "a la interesada";
 				servidorExistente.periodo = moment(servidorExistente.fechainicio, 'YYYY-MM-DD', "es")
 					.format("LL") + " al " + moment(servidorExistente.fechatermino, 'YYYY-MM-DD', "es")
-					.format("LL")
-					.toUpperCase();
+					.format("LL");
+				servidorExistente.periodo = servidorExistente.periodo.toUpperCase();
 				servidorExistente.nombrealumno = servidorExistente.nombrealumno.toUpperCase();
 				servidorExistente.carrera = servidorExistente.carrera.toUpperCase();
 				servidorExistente.dependencia = servidorExistente.dependencia.toUpperCase();
