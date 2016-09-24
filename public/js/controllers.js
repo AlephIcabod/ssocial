@@ -1,41 +1,41 @@
-var app = angular.module("app")
-	.factory("utilityService", function () {
+var app = angular.module( "app" )
+	.factory( "utilityService", function () {
 		return {
 			ultimoID: 1,
 			busqueda: "",
 			getBusqueda: function () {
 				return this.busqueda
 			},
-			setBusqueda: function (bus) {
+			setBusqueda: function ( bus ) {
 				this.busqueda = bus
 			}
 		}
-	})
-	.controller("mainController", ["$location", "utilityService", "$route", "$auth", "authFact", function ($location, utilityService, $route, $auth, authFact) {
+	} )
+	.controller( "mainController", [ "$location", "utilityService", "$route", "$auth", "authFact", function ( $location, utilityService, $route, $auth, authFact ) {
 		mainCtrl = this;
 		this.isLogged = false;
 		this.busqueda = utilityService.getBusqueda();
 		this.buscar = function () {
-			utilityService.setBusqueda(mainCtrl.busqueda);
-			if ($location.path() === "/")
+			utilityService.setBusqueda( mainCtrl.busqueda );
+			if ( $location.path() === "/" )
 				$route.reload()
 			else
-				$location.path("/");
+				$location.path( "/" );
 
 			mainCtrl.busqueda = "";
 		}
 
 		this.logout = function () {
 			$auth.logout()
-				.then(function () {
-					authFact.setAccessToken(null);
-					$location.path("/");
+				.then( function () {
+					authFact.setAccessToken( null );
+					$location.path( "/" );
 					mainCtrl.isLogged = false;
-				});
+				} );
 		}
 
-	}])
-	.controller("homeController", ["$http", "utilityService", "$timeout", function ($http, utilityService, $timeout) {
+	} ] )
+	.controller( "homeController", [ "$http", "utilityService", "$timeout", function ( $http, utilityService, $timeout ) {
 		var control = this;
 		this.query = {
 			carrera: [],
@@ -52,71 +52,71 @@ var app = angular.module("app")
 		this.busquedaRapida = function () {
 			control.alumnos = [];
 			control.ejecutando = true;
-			if (control.busNumControl === "") {
+			if ( control.busNumControl === "" ) {
 				control.ejecutando = false;
 				control.notFound = false;
 				return;
 			}
-			$http.get("/alumnos/" + control.busNumControl)
-				.success(function (d) {
+			$http.get( "/alumnos/" + control.busNumControl )
+				.success( function ( d ) {
 					control.alumnos = d.data;
 					control.busNumControl = "";
 					control.notFound = false;
 					control.ejecutando = false;
-					utilityService.setBusqueda(control.busNumControl)
-				})
-				.catch(function () {
+					utilityService.setBusqueda( control.busNumControl )
+				} )
+				.catch( function () {
 					control.notFound = true;
 					control.ejecutando = false;
-					$timeout(function () {
+					$timeout( function () {
 						control.notFound = false;
 						control.busNumControl = "";
-						utilityService.setBusqueda(control.busNumControl);
-					}, 2000);
-				});
+						utilityService.setBusqueda( control.busNumControl );
+					}, 2000 );
+				} );
 		};
 		this.busquedaRapida();
 		this.getAll = function () {
 			control.alumnos = [];
 			control.ejecutando = true;
-			$http({
+			$http( {
 					method: "GET",
 					url: "/alumnos",
 					params: control.query
-				})
-				.success(function (d) {
+				} )
+				.success( function ( d ) {
 					control.ejecutando = false;
 					control.alumnos = d.data;
 					control.hideForm = false;
 
-				})
+				} )
 		};
-		this.downloadConstancia = function (id) {
-			$http({
+		this.downloadConstancia = function ( id ) {
+			$http( {
 					url: '/alumnos/' + id + '/constancia',
 					method: "GET",
 					responseType: 'blob'
-				})
-				.success(function (data, status, headers, config) {
-					var blob = new Blob([data], {
+				} )
+				.success( function ( data, status, headers, config ) {
+					var blob = new Blob( [ data ], {
 						type: 'docx'
-					});
-					var fileName = headers('content-disposition');
-					saveAs(blob, fileName);
-				})
-				.error(function (data, status, headers, config) {});
+					} );
+					var fileName = headers( 'content-disposition' );
+					saveAs( blob, fileName );
+				} )
+				.error( function ( data, status, headers, config ) {} );
 		}
 
 		this.currentPage = 0;
 		this.pageSize = 10;
-		this.setPage = function (index) {
+		this.setPage = function ( index ) {
 			control.currentPage = index - 1;
 		};
 		control.eliminacion = false;
 		control.idEliminar = null;
 		control.verTabla = true;
 		control.nombreEliminar = null;
-		this.eliminar = function (id, nombre) {
+		this.eliminar = function ( id, nombre ) {
 			control.idEliminar = id;
 			control.eliminacion = true;
 			control.verTabla = false;
@@ -131,25 +131,25 @@ var app = angular.module("app")
 		}
 
 		this.confirmarEliminacion = function () {
-			$http.delete("/alumnos/id/" + control.idEliminar)
-				.success(function (d) {
-					_.remove(control.alumnos, function (i) {
+			$http.delete( "/alumnos/id/" + control.idEliminar )
+				.success( function ( d ) {
+					_.remove( control.alumnos, function ( i ) {
 						return i.id == control.idEliminar;
-					});
+					} );
 
 					control.cancelarEliminacion();
-				})
+				} )
 		}
-	}])
-	.filter('startFrom', function () {
-		return function (input, start) {
+	} ] )
+	.filter( 'startFrom', function () {
+		return function ( input, start ) {
 			start = +start;
-			return input.slice(start);
+			return input.slice( start );
 		};
-	})
-	.controller("editController", ["$http", "$routeParams", "$location", "$timeout", "utilityService", function ($http, $routeParams, $location, $timeout, utilityService) {
+	} )
+	.controller( "editController", [ "$http", "$routeParams", "$location", "$timeout", "utilityService", function ( $http, $routeParams, $location, $timeout, utilityService ) {
 		control = this;
-		this.carreras = ["INGENIERÍA INDUSTRIAL ELÉCTRICA",
+		this.carreras = [ "INGENIERÍA INDUSTRIAL ELÉCTRICA",
 			"INGENIERÍA INDUSTRIAL",
 			"INGENIERÍA EN GESTIÓN EMPRESARIAL",
 			"LICENCIATURA EN INFORMÁTICA",
@@ -164,37 +164,37 @@ var app = angular.module("app")
 			"INGENIERÍA ELÉCTRICA",
 			"INGENIERÍA MECÁNICA"
 		];
-		this.id = parseInt($routeParams.id);
+		this.id = parseInt( $routeParams.id );
 		this.titulo = "Editar";
 		this.cargar = function () {
-			$http.get("/alumnos/id/" + control.id)
-				.success(function (d) {
+			$http.get( "/alumnos/id/" + control.id )
+				.success( function ( d ) {
 					var data = d.data;
-					console.log(data.fechainicio);
-					data.fechainicio = new Date(data.fechainicio);
-					data.fechatermino = new Date(data.fechatermino);
+					console.log( data.fechainicio );
+					data.fechainicio = new Date( data.fechainicio );
+					data.fechatermino = new Date( data.fechatermino );
 
-					console.log(data.fechainicio);
+					console.log( data.fechainicio );
 
-					data.id = parseInt(data.id);
-					calificacion = parseInt(data.calificacion);
-					console.log("respuesta", d.data);
-					control.alumno = _.clone(data);
-					control.original = _.clone(data);
+					data.id = parseInt( data.id );
+					calificacion = parseInt( data.calificacion );
+					console.log( "respuesta", d.data );
+					control.alumno = _.clone( data );
+					control.original = _.clone( data );
 
 					utilityService.ultimoID = control.id;
 					control.titulo = data.nombrealumno;
-					$timeout(function () {
+					$timeout( function () {
 						control.done = false;
-					}, 1500);
-				})
-				.catch(function (e) {
-					$location.path("/notFound")
-				})
+					}, 1500 );
+				} )
+				.catch( function ( e ) {
+					$location.path( "/notFound" )
+				} )
 		};
 
 		this.deshacer = function () {
-			control.alumno = _.clone(control.original);
+			control.alumno = _.clone( control.original );
 		}
 		this.cargar();
 		this.mensaje = "";
@@ -202,40 +202,40 @@ var app = angular.module("app")
 		this.success = true;
 		this.enviar = function () {
 
-			if (!control.alumno.calificado)
+			if ( !control.alumno.calificado )
 				control.alumno.calificacion = null;
-			console.log(control.alumno);
-			$http.put("/alumnos/id/" + control.id, {
+			console.log( control.alumno );
+			$http.put( "/alumnos/id/" + control.id, {
 					servidor: control.alumno
-				})
-				.success(function (d) {
+				} )
+				.success( function ( d ) {
 					control.mensaje = "Cambios guardados con exito";
 					control.done = true;
 					control.success = true;
 					control.cargar();
-				})
-				.catch(function (e) {
+				} )
+				.catch( function ( e ) {
 					control.mensaje = "error";
 					control.done = true;
 					control.success = false;
-				});
+				} );
 		}
 		this.eliminacion = false;
 		this.confirmarEliminacion = function () {
-			$http.delete("/alumnos/id/" + control.alumno.id)
-				.success(function (d) {
-					$location.path("/");
-				})
-				.catch(function (e) {
+			$http.delete( "/alumnos/id/" + control.alumno.id )
+				.success( function ( d ) {
+					$location.path( "/" );
+				} )
+				.catch( function ( e ) {
 					control.mensaje = "Error al eliminar";
 					control.done = true;
 					control.succes = false;
-				});
+				} );
 		}
 
 
-	}])
-	.controller("constanciasController", ["$http", "$timeout", function ($http, $timeout) {
+	} ] )
+	.controller( "constanciasController", [ "$http", "$timeout", function ( $http, $timeout ) {
 		var control = this;
 
 		this.error = false;
@@ -245,36 +245,36 @@ var app = angular.module("app")
 		};
 		this.enviar = function () {
 			control.doing = true;
-			$http({
+			$http( {
 					method: "GET",
 					url: "/alumnos/constancias",
 					params: control.periodo,
 					responseType: "blob"
-				})
-				.success(function (data, status, headers, config) {
-					var blob = new Blob([data], {
+				} )
+				.success( function ( data, status, headers, config ) {
+					var blob = new Blob( [ data ], {
 						type: 'docx'
-					});
-					var fileName = headers('content-disposition');
-					saveAs(blob, fileName);
+					} );
+					var fileName = headers( 'content-disposition' );
+					saveAs( blob, fileName );
 					control.doing = false;
-				})
-				.error(function (data, status, headers, config) {
+				} )
+				.error( function ( data, status, headers, config ) {
 					control.error = true;
 					control.mensaje = "No hay servidores sociales en ese periodo";
-					$timeout(function () {
+					$timeout( function () {
 						control.error = false;
-					}, 1500)
-				});
+					}, 1500 )
+				} );
 
 		}
-	}])
-	.controller("nuevoController", ["$http", "$timeout", function ($http, $timeout) {
+	} ] )
+	.controller( "nuevoController", [ "$http", "$timeout", function ( $http, $timeout ) {
 		control = this;
 		this.titulo = "Agregar nuevo servidor social";
-		this.carreras = ["Ingeniería Civil",
+		this.carreras = [ "Ingeniería Civil",
 			"Ingeniería Eléctrica",
-			"Ingeniería en Electrónica",
+			"Ingeniería Electrónica",
 			"Ingeniería en Gestión Empresarial",
 			"Ingeniería Industrial",
 			"Ingeniería Mecánica",
@@ -302,25 +302,25 @@ var app = angular.module("app")
 		}
 		this.enviar = function () {
 			control.alumno.nombrealumno = control.alumno.nombre + " " + control.alumno.apPat + " " + control.alumno.apMat;
-			$http.post("/alumnos", {
+			$http.post( "/alumnos", {
 					servidor: control.alumno
-				})
-				.success(function (d) {
+				} )
+				.success( function ( d ) {
 					control.done = true;
 					control.success = true;
 					control.id = d.data.id;
 					control.mensaje = "Registro exitoso " + d.data.nombrealumno;
-					$timeout(function () {
+					$timeout( function () {
 						control.done = false;
 						control.reset();
-					}, 2500);
-				})
-				.error(function (d) {
-					console.log(d);
+					}, 2500 );
+				} )
+				.error( function ( d ) {
+					console.log( d );
 					control.done = true;
 					control.success = false;
 					control.mensaje = d.message + " corresponde a " + d.data.nombrealumno;
-				})
+				} )
 		};
 		this.reset = function () {
 			this.alumno = {
@@ -339,28 +339,28 @@ var app = angular.module("app")
 				calificacion: 100
 			}
 		};
-	}])
-	.controller("loginController", ["$scope", "$auth", "$location", "authFact", "$timeout", function ($scope, $auth, $location, authFact, $timeout) {
+	} ] )
+	.controller( "loginController", [ "$scope", "$auth", "$location", "authFact", "$timeout", function ( $scope, $auth, $location, authFact, $timeout ) {
 		var control = this;
-		if ($scope.$parent.mainCtrl.isLogged)
-			$location.path("/sistema");
+		if ( $scope.$parent.mainCtrl.isLogged )
+			$location.path( "/sistema" );
 		this.login = function () {
-			$auth.login({
+			$auth.login( {
 					username: control.username,
 					password: control.password
-				})
-				.then(function (d) {
-					authFact.setAccessToken(d.data.token);
-					$location.path("/sistema");
+				} )
+				.then( function ( d ) {
+					authFact.setAccessToken( d.data.token );
+					$location.path( "/sistema" );
 					control.errorLogin = false;
 					$scope.$parent.mainCtrl.isLogged = true;
-				})
-				.catch(function (response) {
+				} )
+				.catch( function ( response ) {
 
 					control.errorLogin = true;
-					$timeout(function () {
+					$timeout( function () {
 						control.errorLogin = false
-					}, 2000)
-				});
+					}, 2000 )
+				} );
 		}
-	}]);
+	} ] );
