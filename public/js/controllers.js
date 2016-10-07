@@ -170,15 +170,15 @@ var app = angular.module( "app" )
 			$http.get( "/alumnos/id/" + control.id )
 				.success( function ( d ) {
 					var data = d.data;
-					console.log( data.fechainicio );
+
 					data.fechainicio = new Date( data.fechainicio );
 					data.fechatermino = new Date( data.fechatermino );
 
-					console.log( data.fechainicio );
+
 
 					data.id = parseInt( data.id );
 					calificacion = parseInt( data.calificacion );
-					console.log( "respuesta", d.data );
+
 					control.alumno = _.clone( data );
 					control.original = _.clone( data );
 
@@ -204,7 +204,6 @@ var app = angular.module( "app" )
 
 			if ( !control.alumno.calificado )
 				control.alumno.calificacion = null;
-			console.log( control.alumno );
 			$http.put( "/alumnos/id/" + control.id, {
 					servidor: control.alumno
 				} )
@@ -316,10 +315,9 @@ var app = angular.module( "app" )
 					}, 2500 );
 				} )
 				.error( function ( d ) {
-					console.log( d );
 					control.done = true;
 					control.success = false;
-					control.mensaje = d.message + " corresponde a " + d.data.nombrealumno;
+					control.mensaje = d.message;
 				} )
 		};
 		this.reset = function () {

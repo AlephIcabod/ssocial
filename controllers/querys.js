@@ -141,7 +141,7 @@ var newServidor = function (req, res, next) {
 					"es")
 				.format("LL") + " al " + moment(nuevo.fechatermino, "YYYY-MM-DD", "es")
 				.format("LL");
-			nuevo.periodo = periodo.toUpperCase();
+			nuevo.periodo = periodo;
 			nuevo.nombrealumno = nuevo.nombrealumno.toUpperCase();
 			nuevo.carrera = nuevo.carrera.toUpperCase();
 			nuevo.dependencia = nuevo.dependencia.toUpperCase();
@@ -189,7 +189,7 @@ var updateServidor = function (req, res, next) {
 				servidorExistente.periodo = moment(servidorExistente.fechainicio, 'YYYY-MM-DD', "es")
 					.format("LL") + " al " + moment(servidorExistente.fechatermino, 'YYYY-MM-DD', "es")
 					.format("LL");
-				servidorExistente.periodo = servidorExistente.periodo.toUpperCase();
+				servidorExistente.periodo = servidorExistente.periodo;
 				servidorExistente.nombrealumno = servidorExistente.nombrealumno.toUpperCase();
 				servidorExistente.carrera = servidorExistente.carrera.toUpperCase();
 				servidorExistente.dependencia = servidorExistente.dependencia.toUpperCase();

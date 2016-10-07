@@ -653,3 +653,38 @@
 {"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2015-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:15:37.946Z","timestamp":"2016-09-20T04:15:47.160Z"}
 {"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2014-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:15:37.946Z","timestamp":"2016-09-20T04:16:05.857Z"}
 {"level":"info","message":"REQUEST GET : /alumnos/constancias?fechainicio=2000-01-01T06:00:00.000Z&fechatermino=2015-12-02T05:15:37.946Z","timestamp":"2016-09-20T04:16:25.353Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-26T15:09:17.285Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-26T15:09:17.990Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-26T15:09:26.757Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-26T15:09:43.180Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-26T15:10:29.046Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 20772","timestamp":"2016-09-26T15:10:31.743Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/131611","timestamp":"2016-09-26T15:10:42.349Z"}
+{"level":"info","message":"Ejecutada busqueda de 131611","timestamp":"2016-09-26T15:10:43.395Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/20772","timestamp":"2016-09-26T15:10:46.763Z"}
+{"level":"info","message":"Ejecutada busqueda con id 20772","timestamp":"2016-09-26T15:10:46.959Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-26T15:12:47.241Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-26T15:12:55.463Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-26T15:12:58.172Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/1316","timestamp":"2016-09-26T15:13:02.708Z"}
+{"level":"info","message":"Ejecutada busqueda de 1316","timestamp":"2016-09-26T15:13:03.032Z"}
+{"level":"info","message":"REQUEST POST : /alumnos","timestamp":"2016-09-26T15:13:34.498Z"}
+{"level":"info","message":"Se ha creado un nuevo registro con id 18987","timestamp":"2016-09-26T15:13:34.902Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/1316","timestamp":"2016-09-26T15:13:41.958Z"}
+{"level":"info","message":"Ejecutada busqueda de 1316","timestamp":"2016-09-26T15:13:41.974Z"}
+{"level":"info","message":"REQUEST GET : /alumnos/id/18987","timestamp":"2016-09-26T15:13:48.116Z"}
+{"level":"info","message":"Ejecutada busqueda con id 18987","timestamp":"2016-09-26T15:13:48.128Z"}
+{"level":"info","message":"REQUEST DELETE : /alumnos/id/18987","timestamp":"2016-09-26T15:14:20.561Z"}
+{"level":"info","message":"Eliminado 1 registros","timestamp":"2016-09-26T15:14:20.834Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-26T15:16:26.480Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-26T16:02:18.722Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-28T20:12:48.243Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-28T20:12:49.259Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-28T20:12:51.437Z"}
+{"level":"info","message":"REQUEST GET : /favicon.ico","timestamp":"2016-09-28T20:12:51.445Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-28T20:12:55.650Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-28T20:13:59.956Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-28T20:14:22.131Z"}
+{"level":"info","message":"Iniciando en el puerto 3000","timestamp":"2016-09-28T20:15:11.271Z"}
+{"level":"info","message":"REQUEST GET : /","timestamp":"2016-09-28T20:15:15.621Z"}
+{"level":"info","message":"REQUEST POST : /login","timestamp":"2016-09-28T20:15:18.527Z"}

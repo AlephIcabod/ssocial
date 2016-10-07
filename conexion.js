@@ -1,8 +1,8 @@
 var Sequelize = require("sequelize");
 
-database = new Sequelize("cl19-servicio", "cl19-servicio", "servicio", {
-	host: "79.170.40.181",
-	dialect: "mysql",
+database = new Sequelize("servicio", "postgres", "", {
+	host: "localhost",
+	dialect: "postgres",
 	pool: {
 		max: 10,
 		min: 0,
@@ -14,13 +14,13 @@ database = new Sequelize("cl19-servicio", "cl19-servicio", "servicio", {
 
 
 database
-  .authenticate()
-  .then(function(err) {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(function (err) {
-    console.log('Unable to connect to the database:', err);
-  });
+	.authenticate()
+	.then(function (err) {
+		console.log('Connection has been established successfully.');
+	})
+	.catch(function (err) {
+		console.log('Unable to connect to the database:', err);
+	});
 
 
 
